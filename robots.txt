@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://shuhongdai.github.ioLeave blank for root/sitemap.xml
+Sitemap: https://shuhongdai.github.io/sitemap.xml
