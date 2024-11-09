@@ -6,6 +6,7 @@ description: A smart approach to capturing diverse data patterns without overwhe
 tags: formatting code
 categories: sample-posts
 tabs: true
+featured: true
 toc:
   sidebar: left
 ---
