@@ -237,9 +237,11 @@ While LHS is a remarkably efficient method for capturing multidimensional data, 
 One of the primary challenges with LHS arises in high-dimensional spaces. As the number of dimensions $$ d $$ grows, the complexity of generating $$ N $$ samples with balanced coverage across each dimension increases significantly. In lower-dimensional spaces, LHS achieves a clear advantage by ensuring that every interval in each dimension is represented. However, as $$ d $$ rises, this method begins to experience what’s known as the “curse of dimensionality,” where the sample space becomes exponentially large. 
 
 To understand this more formally, consider that LHS divides each dimension’s interval into $$ N $$ equal parts, requiring $$ N^d $$ unique combinations to ensure complete coverage in the $$ d $$-dimensional space. However, practical constraints often limit the total number of samples $$ N $$, leading to fewer possible combinations in the high-dimensional setting, which means that not all regions of the space are sampled as evenly. When the sampling coverage is incomplete, the variance reduction properties of LHS also diminish. The variance of a sample mean $$ \hat{f} $$ from LHS in high-dimensional spaces approximates as:
+
 $$
 \text{Var}_{\text{LHS}}(\hat{f}) \approx \frac{\sigma^2}{N} \cdot \left( 1 + \frac{d - 1}{N} \right)
 $$
+
 where $$ \sigma^2 $$ is the population variance. This variance formula highlights that as $$ d $$ approaches $$ N $$, variance grows, and LHS’s advantage over simple random sampling (SRS) begins to diminish. In high-dimensional scenarios, achieving a representative sample with LHS can require exponentially more points to maintain the same precision, potentially making it less efficient than anticipated. 
 
 ### Challenges with Dynamic Systems 
