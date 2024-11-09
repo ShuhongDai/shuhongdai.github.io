@@ -35,22 +35,30 @@ Now that we’ve opened the door to the multivariate Gaussian, let’s take a cl
 ### Definition
 
 For a multivariate random variable $$ X $$ with $$ n $$ dimensions, the mean vector $$ \mu $$ is defined as:
+
 $$
 \mu = \begin{bmatrix} \mu_1 \\ \mu_2 \\ \vdots \\ \mu_n \end{bmatrix},
 $$
+
+
 where each $$ \mu_i = E[X_i] $$ represents the expected value of the $$i$$-th variable. Essentially, the mean vector $$ \mu $$ gives us a one-stop summary of the “average” position of all dimensions, capturing the expected value along each axis of the multidimensional data space.
 
 ### Derivation: Expectation of the Mean Vector
 
 To fully appreciate the mean vector, let’s delve into its calculation using the expectation operator. Suppose $$ X = \begin{bmatrix} X_1 \\ X_2 \\ \vdots \\ X_n \end{bmatrix} $$ is our multivariate random variable, where each $$ X_i $$ is a random variable in itself. The mean vector $$ \mu $$ is simply the expected value of $$ X $$:
+
 $$
 \mu = E[X].
 $$
 
+
 Breaking this down, **the expectation of $$ X $$ is computed component-wise**. That is,
+
 $$
 \mu = E[X] = \begin{bmatrix} E[X_1] \\ E[X_2] \\ \vdots \\ E[X_n] \end{bmatrix} = \begin{bmatrix} \mu_1 \\ \mu_2 \\ \vdots \\ \mu_n \end{bmatrix}.
 $$
+
+
 This form allows us to treat each dimension independently when calculating the mean, **even though they may be interdependent in terms of their distributions.**
 
 ### Properties of the Mean Vector
@@ -60,25 +68,34 @@ The mean vector isn’t just a passive summary of averages; it’s highly respon
 $$
 Y = AX + b,
 $$
+
 where $$ A $$ is a constant matrix of dimensions $$ m \times n $$ and $$ b $$ is a constant vector of dimension $$ m \times 1 $$. This setup is common in multivariate analysis, where we often transform data to new coordinate systems or scales. Here, we want to understand how this transformation impacts the mean vector.
 
 To derive the expected value of $$ Y $$, we use the linearity of expectation:
+
 $$
 E[Y] = E[AX + b].
 $$
+
 Since $$ A $$ and $$ b $$ are constants, we can simplify:
+
 $$
 E[Y] = AE[X] + b = A\mu + b.
 $$
+
 So, the transformed mean vector of $$ Y $$ is given by $$ A\mu + b $$. This tells us that linear transformations shift and stretch the mean vector in predictable ways: multiplying by $$ A $$ scales or rotates $$ \mu $$, while adding $$ b $$ translates it. Let’s formalize this with a quick proof. Suppose $$ X $$ is a multivariate random variable with mean vector $$ \mu = E[X] $$, and we define $$ Y = AX + b $$. By the definition of expectation, we have:
 
 $$
 E[Y] = E[AX + b] = E[AX] + E[b].
 $$
+
 Since $$ b $$ is constant, $$ E[b] = b $$. Additionally, because expectation is a linear operator, we get $$ E[AX] = A E[X] = A \mu $$. Thus,
+
 $$
 E[Y] = A \mu + b.
 $$
+
+
 This property is not only elegant but incredibly useful. It implies that, regardless of the transformation (as long as it’s linear), we can predict how the mean vector shifts without recalculating everything from scratch. This “transformation invariance” simplifies a lot of practical work in data analysis, letting us predict and manipulate mean vectors in transformed spaces.
 
 In sum, the mean vector $$ \mu $$ isn’t just a set of averages. It’s a fundamental descriptor that tells us where our data is centered, and its behavior under transformations is both consistent and computationally friendly. **Whether you’re scaling, rotating, or translating your data, the mean vector adjusts accordingly, maintaining its role as the central anchor of your multivariate Gaussian distribution.**
@@ -174,9 +191,11 @@ If the mean vector $$ \mu $$ gives us a sense of location, **then the covariance
 ### Definition
 
 The covariance matrix $$ \Sigma $$ of a multivariate random variable $$ X = \begin{bmatrix} X_1 \\ X_2 \\ \vdots \\ X_n \end{bmatrix} $$ is defined as:
+
 $$
 \Sigma = \begin{bmatrix} \text{Cov}(X_1, X_1) & \text{Cov}(X_1, X_2) & \cdots & \text{Cov}(X_1, X_n) \\ \text{Cov}(X_2, X_1) & \text{Cov}(X_2, X_2) & \cdots & \text{Cov}(X_2, X_n) \\ \vdots & \vdots & \ddots & \vdots \\ \text{Cov}(X_n, X_1) & \text{Cov}(X_n, X_2) & \cdots & \text{Cov}(X_n, X_n) \end{bmatrix},
 $$
+
 where each element $$ \Sigma_{ij} = \text{Cov}(X_i, X_j) $$ is the covariance between $$ X_i $$ and $$ X_j $$.
 
 Covariance, in essence, measures the degree to which two variables vary together. When $$ i = j $$, $$ \Sigma_{ii} = \text{Var}(X_i) $$, representing the variance of $$ X_i $$ itself.
@@ -184,25 +203,33 @@ Covariance, in essence, measures the degree to which two variables vary together
 ### Derivation: The Formula for Covariance
 
 To formally compute $$ \Sigma $$, let’s start with the mean vector $$ \mu $$ of $$ X $$, defined as:
+
 $$
 \mu = E[X] = \begin{bmatrix} E[X_1] \\ E[X_2] \\ \vdots \\ E[X_n] \end{bmatrix}.
 $$
+
 Now, the covariance matrix is calculated as the expectation of the outer product of the deviations of $$ X $$ from its mean:
+
 $$
 \Sigma = E[(X - \mu)(X - \mu)^T].
 $$
+
 This formula may look abstract, but it’s grounded in a straightforward concept: by centering $$ X $$ around its mean (i.e., subtracting $$ \mu $$) and then taking the outer product, we capture the spread and co-spread of each variable pair.
 
 #### Step-by-Step Derivation of $$ \Sigma $$
 
 Let’s expand the formula a bit to understand the inner workings. We have:
+
 $$
 \Sigma = E \left[ \begin{bmatrix} X_1 - \mu_1 \\ X_2 - \mu_2 \\ \vdots \\ X_n - \mu_n \end{bmatrix} \begin{bmatrix} X_1 - \mu_1 & X_2 - \mu_2 & \cdots & X_n - \mu_n \end{bmatrix} \right].
 $$
+
 When we take the expectation, each element $$ \Sigma_{ij} $$ becomes:
+
 $$
 \Sigma_{ij} = E[(X_i - \mu_i)(X_j - \mu_j)].
 $$
+
 This is simply the definition of covariance between $$ X_i $$ and $$ X_j $$. As such, $$ \Sigma $$ encodes all pairwise relationships in one matrix, giving us a complete picture of how our variables are interconnected.
 
 ### Properties of the Covariance Matrix
@@ -212,27 +239,35 @@ The covariance matrix isn’t just a convenient summary; it has some fascinating
 #### Symmetry
 
 One of the most fundamental properties of $$ \Sigma $$ is that it is symmetric. To see why, consider the definition of covariance:
+
 $$
 \Sigma_{ij} = \text{Cov}(X_i, X_j) = E[(X_i - \mu_i)(X_j - \mu_j)].
 $$
+
 By the commutative property of multiplication, $$ (X_i - \mu_i)(X_j - \mu_j) = (X_j - \mu_j)(X_i - \mu_i) $$. Thus:
+
 $$
 \Sigma_{ij} = E[(X_i - \mu_i)(X_j - \mu_j)] = E[(X_j - \mu_j)(X_i - \mu_i)] = \Sigma_{ji}.
 $$
+
 This symmetry property tells us that $$ \Sigma $$ is equal to its own transpose, or $$ \Sigma = \Sigma^T $$. This is crucial because it ensures that the eigenvalues of $$ \Sigma $$ are real, a feature that will come in handy when interpreting the distribution’s geometry.
 
 #### Positive Semi-Definiteness
 
 Another key property of the covariance matrix is that it is positive semi-definite. Mathematically, this means that for any vector $$ z $$, we have:
+
 $$
 z^T \Sigma z \geq 0.
 $$
+
 **Intuitively, this property tells us that the “spread” of the data is never negative**—a fundamental requirement for any meaningful measure of variance. Let’s quickly prove this property.
 
 For any vector $$ z \in \mathbb{R}^n $$, we have:
+
 $$
 z^T \Sigma z = z^T E[(X - \mu)(X - \mu)^T] z = E[z^T (X - \mu)(X - \mu)^T z] = E[(z^T(X - \mu))^2].
 $$
+
 Since $$ (z^T(X - \mu))^2 $$ is a square, it is always non-negative, which implies that $$ z^T \Sigma z \geq 0 $$. Thus, $$ \Sigma $$ is positive semi-definite, meaning it has non-negative eigenvalues, another crucial feature for understanding data spread.
 
 #### Covariance under Linear Transformation
@@ -240,17 +275,23 @@ Since $$ (z^T(X - \mu))^2 $$ is a square, it is always non-negative, which impli
 One of the most powerful aspects of the covariance matrix is how it transforms under linear operations. Suppose we apply a linear transformation $$ Y = AX + b $$, where $$ A $$ is a constant matrix and $$ b $$ is a constant vector. Just as we saw with the mean vector, we want to understand how the covariance matrix $$ \Sigma $$ changes under this transformation.
 
 The covariance of $$ Y $$, denoted $$ \text{Cov}(Y) $$, is given by:
+
 $$
 \text{Cov}(Y) = E[(Y - E[Y])(Y - E[Y])^T].
 $$
+
 Since $$ Y = AX + b $$, we can substitute and simplify:
+
 $$
 Y - E[Y] = AX + b - (AE[X] + b) = A(X - E[X]).
 $$
+
 Thus:
+
 $$
 \text{Cov}(Y) = E[A(X - E[X])(X - E[X])^T A^T] = A E[(X - E[X])(X - E[X])^T] A^T = A \Sigma A^T.
 $$
+
 This result, $$ \text{Cov}(Y) = A \Sigma A^T $$, tells us that under a linear transformation, the covariance matrix $$ \Sigma $$ transforms in a predictable manner. This property is critical in fields like machine learning and statistics, where data is often scaled or rotated to enhance interpretability or improve model performance.
 
 ### Demo
@@ -379,17 +420,21 @@ Each ellipse’s geometry—the length and direction of its axes—offers a visu
 ### Eigenvalue Decomposition of the Covariance Matrix
 
 To understand the ellipse’s structure more deeply, let’s look at the eigenvalue decomposition of $$ \Sigma $$. The covariance matrix $$ \Sigma $$ is symmetric, meaning it can be decomposed as:
+
 $$
 \Sigma = Q \Lambda Q^T,
 $$
+
 where:
 - $$ Q $$ is a matrix of eigenvectors of $$ \Sigma $$, and
 - $$ \Lambda $$ is a diagonal matrix of eigenvalues of $$ \Sigma $$, with each eigenvalue corresponding to the variance along a principal direction.
 
 This decomposition provides a clean geometric interpretation. If we rewrite our multivariate random variable $$ X $$ (centered at the origin for simplicity) as:
+
 $$
 X = Q D Z,
 $$
+
 where $$ D = \sqrt{\Lambda} $$ is the matrix of square roots of the eigenvalues and $$ Z $$ is a vector of standard normal variables, we can see that $$ Q $$ rotates the data along the principal directions and $$ D $$ scales it according to the variances.
 
 Let’s illustrate this in two steps.
@@ -500,42 +545,56 @@ This elliptical geometry offers a powerful intuition: **the covariance matrix de
 To ground our understanding of the covariance matrix in something concrete, let’s work through a hands-on example. We’ll take a simple two-dimensional random variable, calculate its mean vector and covariance matrix from a small dataset, and observe how these values summarize our data.
 
 Imagine we have a dataset representing the measurements of two variables, say $$ X_1 $$ and $$ X_2 $$, for simplicity. This could be anything—a set of financial returns, height and weight pairs, or temperatures at different locations. Let’s define our random variable $$ X $$ as:
+
 $$
 X = \begin{bmatrix} X_1 \\ X_2 \end{bmatrix}.
 $$
+
 We’ll calculate the sample mean vector $$ \hat{\mu} $$ and the sample covariance matrix $$ \hat{\Sigma} $$ based on observed data.
 
 ### Step 1: Calculate the Sample Mean Vector
 
 Let’s start with the sample mean vector, which captures the “central location” of the data. Given $$ N $$ observations, we define the sample mean $$ \hat{\mu} $$ as:
+
 $$
 \hat{\mu} = \frac{1}{N} \sum_{i=1}^N X_i,
 $$
+
 where $$ X_i $$ represents the $$ i $$-th observation of our random variable $$ X $$.
 
 For instance, suppose we have the following five observations:
+
 $$
 X_1 = \begin{bmatrix} 2 \\ 3 \end{bmatrix}, \quad X_2 = \begin{bmatrix} 3 \\ 5 \end{bmatrix}, \quad X_3 = \begin{bmatrix} 5 \\ 7 \end{bmatrix}, \quad X_4 = \begin{bmatrix} 6 \\ 8 \end{bmatrix}, \quad X_5 = \begin{bmatrix} 8 \\ 10 \end{bmatrix}.
 $$
+
 The sample mean vector $$ \hat{\mu} $$ is then calculated as:
+
 $$
 \hat{\mu} = \frac{1}{5} \left( \begin{bmatrix} 2 \\ 3 \end{bmatrix} + \begin{bmatrix} 3 \\ 5 \end{bmatrix} + \begin{bmatrix} 5 \\ 7 \end{bmatrix} + \begin{bmatrix} 6 \\ 8 \end{bmatrix} + \begin{bmatrix} 8 \\ 10 \end{bmatrix} \right).
 $$
+
 Breaking it down component-wise:
+
 $$
 \hat{\mu}_1 = \frac{1}{5} (2 + 3 + 5 + 6 + 8) = 4.8, \quad \hat{\mu}_2 = \frac{1}{5} (3 + 5 + 7 + 8 + 10) = 6.6.
 $$
+
 Thus, our mean vector is:
+
 $$
 \hat{\mu} = \begin{bmatrix} 4.8 \\ 6.6 \end{bmatrix}.
 $$
 
+
 ### Step 2: Calculate the Sample Covariance Matrix
 
 Next, let’s calculate the sample covariance matrix, which tells us not only the variability of each variable but also how $$ X_1 $$ and $$ X_2 $$ move in relation to each other. The sample covariance matrix $$ \hat{\Sigma} $$ is defined as:
+
 $$
 \hat{\Sigma} = \frac{1}{N-1} \sum_{i=1}^N (X_i - \hat{\mu})(X_i - \hat{\mu})^T.
 $$
+
 For our five observations, $$ N = 5 $$, so we’ll divide by $$ 4 $$ (that’s $$ N - 1 $$).
 
 Let’s compute each term $$ (X_i - \hat{\mu})(X_i - \hat{\mu})^T $$ for each observation:
@@ -593,11 +652,13 @@ $$
 0.16 \end{bmatrix} + \begin{bmatrix} 1.44 & 1.68 \\ 1.68 & 1.96 \end{bmatrix} + \begin{bmatrix} 10.24 & 10.88 \\ 10.88 & 11.56 \end{bmatrix} \right).
 $$
 
+
 After summing the matrices:
 
 $$
 \hat{\Sigma} = \frac{1}{4} \begin{bmatrix} 22.8 & 25.6 \\ 25.6 & 29.2 \end{bmatrix} = \begin{bmatrix} 5.7 & 6.4 \\ 6.4 & 7.3 \end{bmatrix}.
 $$
+
 
 ### Summary
 
@@ -614,17 +675,21 @@ As we wrap up our journey into the world of covariance matrices, it’s fitting 
 ### Defining Independence
 
 In probability theory, two random variables $$ X_i $$ and $$ X_j $$ are defined to be **independent** if the occurrence of one has no influence on the probability distribution of the other. Mathematically, this means:
+
 $$
 P(X_i \leq x, X_j \leq y) = P(X_i \leq x) \cdot P(X_j \leq y),
 $$
+
 for all $$ x $$ and $$ y $$. In simpler terms, knowing the value of $$ X_i $$ provides no information about $$ X_j $$ and vice versa.
 
 ### Covariance and Independence: A Subtle Distinction
 
 The covariance matrix tells us about the **linear relationships** between variables, but not necessarily about their independence. For two variables $$ X_i $$ and $$ X_j $$, the covariance $$ \text{Cov}(X_i, X_j) $$ is defined as:
+
 $$
 \text{Cov}(X_i, X_j) = E[(X_i - E[X_i])(X_j - E[X_j])].
 $$
+
 If $$ X_i $$ and $$ X_j $$ are independent, then $$ \text{Cov}(X_i, X_j) = 0 $$. Independence implies that there is no relationship between the variables at all, which includes a lack of linear correlation. However, the reverse is not true: **zero covariance does not imply independence**.
 
 To see why, let’s explore this distinction mathematically and with an example.
@@ -636,17 +701,24 @@ To understand why zero covariance does not necessarily mean independence, consid
 Let $$ X $$ be a standard normal random variable: $$ X \sim N(0, 1) $$. Now define $$ Y = X^2 $$. Clearly, $$ Y $$ depends on $$ X $$; in fact, $$ Y $$ is entirely determined by $$ X $$, so $$ X $$ and $$ Y $$ are not independent.
 
 1. **Calculating the Covariance**: We’ll calculate $$ \text{Cov}(X, Y) $$ to see if they’re uncorrelated.
+  
    $$
    \text{Cov}(X, Y) = E[(X - E[X])(Y - E[Y])].
    $$
+
    Since $$ X \sim N(0, 1) $$, we have $$ E[X] = 0 $$ and $$ E[Y] = E[X^2] = \text{Var}(X) = 1 $$. So,
+
    $$
    \text{Cov}(X, Y) = E[X(Y - 1)] = E[X(X^2 - 1)] = E[X^3 - X].
    $$
+
 2. **Expectation of Odd Moments**: Given that $$ X $$ is normally distributed with mean 0, all odd moments of $$ X $$ (such as $$ E[X] $$ and $$ E[X^3] $$) are zero. Therefore,
+  
    $$
    \text{Cov}(X, Y) = E[X^3] - E[X] = 0 - 0 = 0.
    $$
+
+
    Thus, $$ \text{Cov}(X, Y) = 0 $$, indicating that $$ X $$ and $$ Y $$ are uncorrelated. But as we know, $$ Y = X^2 $$, which is entirely determined by $$ X $$. Therefore, they are not independent, even though they are uncorrelated.
 
 This example highlights a key takeaway: **uncorrelated variables are not necessarily independent**. Covariance only captures linear relationships, so two variables could have a non-linear dependency and still exhibit zero covariance.

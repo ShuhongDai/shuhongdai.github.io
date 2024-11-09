@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-[A paper on vehicle-road cooperation](https://ieeexplore.ieee.org/abstract/document/10632106) was accepted by *IEEE IoT Journal*.
+[A paper on vehicle-road cooperation](https://ieeexplore.ieee.org/document/10632106) was accepted by *IEEE IoT Journal*.
