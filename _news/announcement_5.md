@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-[A paper on energy-efficient computing](https://www.sciencedirect.com/science/article/pii/S0140366423004802?via%3Dihub) was accepted by *Computer Communications*.
+[A paper on energy-efficient computing](https://www.sciencedirect.com/science/article/pii/S0140366423004802?via%3Dihub) was accepted by _Computer Communications_.

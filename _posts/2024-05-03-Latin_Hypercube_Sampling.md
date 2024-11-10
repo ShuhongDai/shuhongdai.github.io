@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Sampling Smarter: Unlocking the Power of Latin Hypercube Sampling"
+title: "Sampling Smarter: Unlocking the Power of Latin Hypercube Sampling"
 date: 2024-05-03 00:32:10
 description: A smart approach to capturing diverse data patterns without overwhelming resources.
 tags: formatting code
@@ -12,10 +12,10 @@ toc:
   sidebar: left
 ---
 
-
 ---
 
 ## What is Latin Hypercube Sampling?
+
 Imagine you're standing over a large chessboard, each square representing a potential outcome of some experiment. The squares are spread out, spanning the entire board, and the goal is to gather a sample of outcomes that gives you the best possible understanding of the whole chessboard—not just a corner, not just a few scattered patches, but everywhere. Latin Hypercube Sampling (LHS) is a smart way to do this, ensuring that each row and column of the board has exactly one selected square. It’s like a carefully orchestrated game where you end up with one piece in every row and every column, giving you a complete sense of the landscape. In the world of data science, this chessboard metaphor expands into multidimensional space. Instead of just two dimensions—like the chessboard's rows and columns—think of an entire universe of variables, each one adding a new dimension. If you’re trying to model something complex, like how different factors affect climate or how various inputs influence the outcome of an engineering system, you need a way to efficiently sample from all these different dimensions.
 
 That’s where LHS shines. Unlike random sampling, which might leave some regions underrepresented while others get chosen repeatedly, LHS spreads the samples evenly across each dimension. Think of it as ensuring every corner of the universe of possibilities gets its fair share of attention. Each sample is like a probe that’s perfectly positioned to gather information from every aspect of the system, without clustering too much in any one place.
@@ -24,9 +24,10 @@ The key idea behind LHS is balance—the same kind of balance you see when picki
 
 LHS isn’t just about getting data—it's about getting the right data, the kind that captures complexity without unnecessary repetition. In the chapters ahead, we’ll dive deeper into how LHS works in practice, explore its benefits, and compare it to other sampling methods, illustrating why this approach has become a favorite among statisticians and engineers alike.
 
-***
+---
 
 ## Why Do We Need Latin Hypercube Sampling?
+
 LHS is a powerful tool for efficiently understanding complex systems when resources are limited. In the real world, whether we are studying natural phenomena, building financial models, or designing new technology, we often face too many possible combinations of factors to analyze exhaustively. LHS provides a smart way to sample the most relevant data without having to examine every possibility.
 
 Think of tasting a big pot of vegetable soup. If you randomly scoop just once, you might get mostly broth or only one type of vegetable, missing the full flavor. LHS ensures that each spoonful represents every major ingredient, giving a balanced understanding of the whole pot. Similarly, LHS ensures that every part of a complex system is represented, giving us a clearer, more complete picture. This method is particularly useful in high-dimensional problems, like understanding energy consumption in a building, which depends on factors such as temperature, occupancy, lighting, and insulation. Random sampling might leave some factor combinations out, leading to gaps in understanding. LHS ensures that all relevant combinations are covered, making it easier to see the relationships without redundant or overlooked data. The efficiency of LHS is one of its biggest advantages. For instance, in modeling the effects of a new drug, with many variables like dosage and genetic markers, LHS allows for fewer, but strategically chosen, trials that still provide a comprehensive view. This means we can extract meaningful insights without the need for an overwhelming number of experiments.
@@ -34,6 +35,7 @@ Think of tasting a big pot of vegetable soup. If you randomly scoop just once, y
 In practical applications, whether constrained by budget, time, or logistics, LHS proves invaluable. Engineers can use it to test a manageable number of car engine configurations, while scientists can employ it to study pollutant spread efficiently. LHS provides a strategic way to cover the landscape, ensuring no critical area is neglected.
 
 ## How Does Latin Hypercube Sampling Work?
+
 To truly understand LHS and appreciate its unique capabilities, we’ll delve into the mathematics underpinning it. Through a sequence of structured steps, we'll see how LHS ensures efficient, balanced sampling in multidimensional space. This method systematically constructs sample points to provide a representative cross-section of complex systems, thereby capturing the essence of multidimensional data without unnecessary redundancy.
 
 ### 1. Problem Setup
@@ -48,7 +50,7 @@ $$
 [a_i, b_i] = \bigcup_{j=1}^N \left[ a_i + \frac{j-1}{N} (b_i - a_i), a_i + \frac{j}{N} (b_i - a_i) \right]
 $$
 
-where each subinterval $$ I_{i,j} $$ for dimension $$ x_i $$ is given by:
+where each subinterval $$ I\_{i,j} $$ for dimension $$ x_i $$ is given by:
 
 $$
 I_{i,j} = \left[ a_i + \frac{j-1}{N} (b_i - a_i), a_i + \frac{j}{N} (b_i - a_i) \right]
@@ -64,13 +66,13 @@ This systematic partitioning ensures that each dimension $$ x_i $$ is split into
 
 ### 3. Random Sampling within Each Interval
 
-Within each subinterval $$ I_{i,j} $$ of dimension $$ x_i $$, we randomly select a point $$ x_{i,j} $$. This point can be represented mathematically as:
+Within each subinterval $$ I*{i,j} $$ of dimension $$ x_i $$, we randomly select a point $$ x*{i,j} $$. This point can be represented mathematically as:
 
 $$
 x_{i, j} = a_i + \frac{j-1}{N} (b_i - a_i) + U_{i,j} \cdot \Delta x_i
 $$
 
-where $$ U_{i,j} \sim \text{Uniform}(0,1) $$ represents a uniformly distributed random variable within $$[0,1]$$. This formulation ensures that $$ x_{i,j} $$ falls randomly within the subinterval $$ I_{i,j} $$, providing a sample point that respects the interval boundaries.
+where $$ U*{i,j} \sim \text{Uniform}(0,1) $$ represents a uniformly distributed random variable within $$[0,1]$$. This formulation ensures that $$ x*{i,j} $$ falls randomly within the subinterval $$ I\_{i,j} $$, providing a sample point that respects the interval boundaries.
 
 ### 4. Constructing Multidimensional Sample Points
 
@@ -88,8 +90,8 @@ This arrangement guarantees that each sample point spans a unique combination of
 
 One of the core strengths of LHS lies in its marginal uniformity. This property ensures that the samples are uniformly distributed along each individual dimension $$ x_i $$, even as they span multiple dimensions. Let's delve into a formal explanation:
 
-1. Each dimension $$ x_i $$ is divided into $$ N $$ intervals $$ I_{i,1}, I_{i,2}, \dots, I_{i,N} $$, with a single sample $$ x_{i,j} $$ taken from each interval.
-2. Each sample $$ x_{i,j} $$ is drawn uniformly from within its interval, meaning that the probability of sampling any particular region within $$ [a_i, b_i] $$ is evenly distributed.
+1. Each dimension $$ x*i $$ is divided into $$ N $$ intervals $$ I*{i,1}, I*{i,2}, \dots, I*{i,N} $$, with a single sample $$ x\_{i,j} $$ taken from each interval.
+2. Each sample $$ x\_{i,j} $$ is drawn uniformly from within its interval, meaning that the probability of sampling any particular region within $$ [a_i, b_i] $$ is evenly distributed.
 3. Consequently, for each dimension $$ x_i $$, the probability distribution of the sample points across intervals is uniform, with each subinterval receiving exactly one sample point.
 
 This uniformity across intervals ensures that the samples are well-distributed along each dimension, resulting in comprehensive and unbiased coverage of the space.
@@ -130,10 +132,9 @@ $$
 \text{Var}_{\text{LHS}}(\hat{f}) \leq \frac{\sigma^2}{N}
 $$
 
-This inequality demonstrates that LHS consistently achieves lower variance than simple random sampling, making it a more efficient and precise sampling method. 
+This inequality demonstrates that LHS consistently achieves lower variance than simple random sampling, making it a more efficient and precise sampling method.
 
 ---
-
 
 ## Example: Optimizing a Drug Dosage Experiment with LHS
 
@@ -175,7 +176,7 @@ This structured partitioning provides a foundation for balanced sampling within 
 
 ### Step 2: Random Sampling within Each Interval
 
-Next, we randomly select a sample point within each subinterval. For example, within the first dosage interval $$ [50, 80] $$, we select a random point $$ x_{1,1} $$. We do the same for other intervals, ensuring a point is chosen within each range. This process guarantees that every segment of each variable’s range contributes to our sample set.
+Next, we randomly select a sample point within each subinterval. For example, within the first dosage interval $$ [50, 80] $$, we select a random point $$ x\_{1,1} $$. We do the same for other intervals, ensuring a point is chosen within each range. This process guarantees that every segment of each variable’s range contributes to our sample set.
 
 Let’s say we get the following randomly chosen points for each dimension:
 
@@ -212,7 +213,9 @@ This arrangement ensures that each variable is evenly represented across its ran
 In this example, LHS allows us to effectively sample a three-dimensional space, covering a comprehensive range of dosage, age, and weight combinations with only five samples. This balanced approach gives us a holistic view of how these variables interact, helping researchers understand dosage effects across diverse patient profiles while minimizing experimental overhead.
 
 ---
+
 ## Real-World Applications of Latin Hypercube Sampling
+
 LHS may sound like a tool for abstract math, but its practical impact is very real. Across engineering, environmental science, finance, healthcare, and energy modeling, LHS is a quietly transformative technique, allowing researchers to gain clear insights without drowning in data. Imagine trying to paint a detailed landscape but having only a handful of colors and brushstrokes to work with—LHS is like using those few strokes in exactly the right places to capture the whole scene with remarkable accuracy. Here’s how LHS works its magic across different fields.
 
 In engineering, for example, LHS helps streamline design and testing. Think of a car manufacturer simulating thousands of design combinations to improve performance under diverse conditions like temperature, load, and speed. Instead of running endless trials, LHS allows engineers to test a fraction of those designs in a structured way, covering the full range of conditions without redundancy. The result? They get the insights needed to enhance performance with far fewer tests, saving time and resources without sacrificing precision.
@@ -231,11 +234,11 @@ In each of these fields, LHS is the secret ingredient that transforms limited sa
 
 ## Limitations of Latin Hypercube Sampling
 
-While LHS is a remarkably efficient method for capturing multidimensional data, it has limitations, particularly when dealing with high-dimensional spaces and dynamic systems. These challenges underscore that even advanced sampling techniques like LHS must sometimes be augmented or adapted to maintain efficiency and accuracy. 
+While LHS is a remarkably efficient method for capturing multidimensional data, it has limitations, particularly when dealing with high-dimensional spaces and dynamic systems. These challenges underscore that even advanced sampling techniques like LHS must sometimes be augmented or adapted to maintain efficiency and accuracy.
 
-### Computational Demands in High Dimensions 
+### Computational Demands in High Dimensions
 
-One of the primary challenges with LHS arises in high-dimensional spaces. As the number of dimensions $$ d $$ grows, the complexity of generating $$ N $$ samples with balanced coverage across each dimension increases significantly. In lower-dimensional spaces, LHS achieves a clear advantage by ensuring that every interval in each dimension is represented. However, as $$ d $$ rises, this method begins to experience what’s known as the “curse of dimensionality,” where the sample space becomes exponentially large. 
+One of the primary challenges with LHS arises in high-dimensional spaces. As the number of dimensions $$ d $$ grows, the complexity of generating $$ N $$ samples with balanced coverage across each dimension increases significantly. In lower-dimensional spaces, LHS achieves a clear advantage by ensuring that every interval in each dimension is represented. However, as $$ d $$ rises, this method begins to experience what’s known as the “curse of dimensionality,” where the sample space becomes exponentially large.
 
 To understand this more formally, consider that LHS divides each dimension’s interval into $$ N $$ equal parts, requiring $$ N^d $$ unique combinations to ensure complete coverage in the $$ d $$-dimensional space. However, practical constraints often limit the total number of samples $$ N $$, leading to fewer possible combinations in the high-dimensional setting, which means that not all regions of the space are sampled as evenly. When the sampling coverage is incomplete, the variance reduction properties of LHS also diminish. The variance of a sample mean $$ \hat{f} $$ from LHS in high-dimensional spaces approximates as:
 
@@ -243,26 +246,27 @@ $$
 \text{Var}_{\text{LHS}}(\hat{f}) \approx \frac{\sigma^2}{N} \cdot \left( 1 + \frac{d - 1}{N} \right)
 $$
 
-where $$ \sigma^2 $$ is the population variance. This variance formula highlights that as $$ d $$ approaches $$ N $$, variance grows, and LHS’s advantage over simple random sampling (SRS) begins to diminish. In high-dimensional scenarios, achieving a representative sample with LHS can require exponentially more points to maintain the same precision, potentially making it less efficient than anticipated. 
+where $$ \sigma^2 $$ is the population variance. This variance formula highlights that as $$ d $$ approaches $$ N $$, variance grows, and LHS’s advantage over simple random sampling (SRS) begins to diminish. In high-dimensional scenarios, achieving a representative sample with LHS can require exponentially more points to maintain the same precision, potentially making it less efficient than anticipated.
 
-### Challenges with Dynamic Systems 
+### Challenges with Dynamic Systems
 
 Another notable limitation of LHS lies in its static nature, which can be less effective for systems where variables have time-dependent relationships or feedback loops. LHS operates under the assumption that each variable can be sampled independently within its interval, which is reasonable for many static or quasi-static systems. However, in dynamic systems—such as those seen in financial markets, climate models, or real-time simulations—dependencies between variables often evolve over time, meaning the state of one variable may directly influence the others.
 
-For example, in a climate model where temperature, humidity, and wind speed are interdependent and change over time, simply sampling each dimension independently may miss critical interdependencies. Mathematically, if we denote a system state at time $$ t $$ as $$ \mathbf{x}(t) = (x_1(t), x_2(t), \dots, x_d(t)) $$, then dynamic relationships between variables $$ x_i(t) $$ might require joint distribution sampling, something that LHS in its classical form doesn’t inherently accommodate.  
+For example, in a climate model where temperature, humidity, and wind speed are interdependent and change over time, simply sampling each dimension independently may miss critical interdependencies. Mathematically, if we denote a system state at time $$ t $$ as $$ \mathbf{x}(t) = (x_1(t), x_2(t), \dots, x_d(t)) $$, then dynamic relationships between variables $$ x_i(t) $$ might require joint distribution sampling, something that LHS in its classical form doesn’t inherently accommodate.
 
-For dynamic models, we would ideally sample from the conditional distributions $$ P(x_i(t) \vert x_{-i}(t)) $$, where $$ x_{-i}(t) $$ represents the set of all other variables at time $$ t $$. However, traditional LHS treats each dimension independently, lacking the ability to conditionally update samples based on evolving states of other variables. As a result, alternative sampling techniques—such as sequential Monte Carlo (SMC) or particle filtering, which adapt to these dependencies—are often more appropriate for dynamic systems. 
+For dynamic models, we would ideally sample from the conditional distributions $$ P(x*i(t) \vert x*{-i}(t)) $$, where $$ x\_{-i}(t) $$ represents the set of all other variables at time $$ t $$. However, traditional LHS treats each dimension independently, lacking the ability to conditionally update samples based on evolving states of other variables. As a result, alternative sampling techniques—such as sequential Monte Carlo (SMC) or particle filtering, which adapt to these dependencies—are often more appropriate for dynamic systems.
 
-### Addressing Dependencies and Dimensionality Constraints 
+### Addressing Dependencies and Dimensionality Constraints
 
-One way to address these limitations is by hybridizing LHS with other sampling techniques. For high-dimensional spaces, combining LHS with stratified sampling or Sobol sequences can mitigate the curse of dimensionality, ensuring better coverage in each dimension without requiring an impractical number of samples. In dynamic systems, integrating LHS with adaptive sampling techniques, where the sample distribution updates based on real-time data, may offer a way to retain the efficiency of LHS while accommodating evolving dependencies. 
+One way to address these limitations is by hybridizing LHS with other sampling techniques. For high-dimensional spaces, combining LHS with stratified sampling or Sobol sequences can mitigate the curse of dimensionality, ensuring better coverage in each dimension without requiring an impractical number of samples. In dynamic systems, integrating LHS with adaptive sampling techniques, where the sample distribution updates based on real-time data, may offer a way to retain the efficiency of LHS while accommodating evolving dependencies.
 
 ---
 
 ## Demo
+
 Here’s a demonstration of LHS across different dimensions. In 2D, we see LHS distributing sample points evenly across the grid, ensuring each part of the space is represented. In 3D, this principle extends gracefully, capturing a well-balanced spread across all three dimensions. Finally, in 4D, we employ dimensionality reduction to visualize the sampling density, revealing how LHS continues to provide comprehensive coverage even in complex, multi-dimensional settings.
 
->Updated on June 22, 2024: Additionally, the PCA method used for dimensionality reduction in 4D sampling is detailed with examples in [our latest blog post](https://shuhongdai.github.io/blog/2024/Correlation_Coefficients/#pca-extracting-linear-patterns).
+> Updated on June 22, 2024: Additionally, the PCA method used for dimensionality reduction in 4D sampling is detailed with examples in [our latest blog post](https://shuhongdai.github.io/blog/2024/Correlation_Coefficients/#pca-extracting-linear-patterns).
 
 {% assign img_name1 = "2d.png" | split: "/" | last | split: "." | first %}
 {% include figure.liquid
@@ -335,12 +339,12 @@ def plot_3d_lhs(samples, title="3D LHS Sampling"):
     fig = plt.figure(figsize=(10, 8))
     ax = fig.add_subplot(111, projection='3d')  # Create 3D projection
     ax.scatter(samples[:, 0], samples[:, 1], samples[:, 2], color="green", s=50, edgecolor="w", alpha=0.7)
-    
+
     ax.set_title(title)
     ax.set_xlabel("Dimension 1")
     ax.set_ylabel("Dimension 2")
     ax.set_zlabel("Dimension 3")
-    
+
     plt.show()
 
 # Plotting 4D LHS samples reduced to 2D with density map
@@ -348,7 +352,7 @@ def plot_4d_lhs_with_density(samples, title="4D LHS Sampling (PCA Reduced)"):
     # Apply PCA to reduce the 4D data to 2D
     reduced_samples = reduce_dimension(samples)
     x, y = reduced_samples[:, 0], reduced_samples[:, 1]
-    
+
     plt.figure(figsize=(8, 6))
     # Plot density heatmap using kdeplot
     sns.kdeplot(x=x, y=y, cmap="Blues", fill=True, thresh=0.05, alpha=0.7)
@@ -363,20 +367,19 @@ def plot_4d_lhs_with_density(samples, title="4D LHS Sampling (PCA Reduced)"):
 # Loop through the specified dimensions and generate the corresponding plots
 for dim in dimensions:
     samples = generate_lhs_samples(dim, n_samples)
-    
+
     if dim == 2:
         # Plot for 2D LHS sampling
         plot_2d_lhs(samples, title="2D LHS Sampling")
-        
+
     elif dim == 3:
         # Plot for 3D LHS sampling with 3D view
         plot_3d_lhs(samples, title="3D LHS Sampling")
-        
+
     elif dim == 4:
         # Plot for 4D LHS sampling after PCA reduction with density visualization
         plot_4d_lhs_with_density(samples, title="4D LHS Sampling (PCA Reduced)")
 ```
-
 
 ---
 

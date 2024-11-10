@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  A Supplementary Discussion on Correlation Coefficients
+title: A Supplementary Discussion on Correlation Coefficients
 date: 2024-06-22 00:32:10
 description: A smart approach to capturing diverse data patterns without overwhelming resources.
 tags: formatting code
@@ -18,17 +18,17 @@ In my [previous blog post](https://shuhongdai.github.io/blog/2024/An_Introductor
 
 This brings us to correlation and the correlation matrix, essential concepts for interpreting the strength of relationships between variables independently of their original units or scales. Given their importance, this follow-up post serves as a brief guide to correlation coefficients and the correlation matrix. Here, we’ll cover the basics of correlation, the structure and derivation of the correlation matrix, and some of its most useful properties and applications.
 
-In the previous discussion on covariance, we established a foundational understanding of how variables co-vary, yet covariance itself is sensitive to the original units of measurement, limiting its direct interpretability across different data scales. Here, the correlation coefficient, $$ \rho_{X,Y} $$, refines this measure by standardizing the relationship between two variables, allowing a comparison of their linear association independent of units.
+In the previous discussion on covariance, we established a foundational understanding of how variables co-vary, yet covariance itself is sensitive to the original units of measurement, limiting its direct interpretability across different data scales. Here, the correlation coefficient, $$ \rho\_{X,Y} $$, refines this measure by standardizing the relationship between two variables, allowing a comparison of their linear association independent of units.
 
 ---
 
 ## The Correlation Coefficient
 
-In the previous discussion on covariance, we established a foundational understanding of how variables co-vary, yet covariance itself is sensitive to the original units of measurement, limiting its direct interpretability across different data scales. Here, the correlation coefficient, $$ \rho_{X,Y} $$, refines this measure by standardizing the relationship between two variables, allowing a comparison of their linear association independent of units.
+In the previous discussion on covariance, we established a foundational understanding of how variables co-vary, yet covariance itself is sensitive to the original units of measurement, limiting its direct interpretability across different data scales. Here, the correlation coefficient, $$ \rho\_{X,Y} $$, refines this measure by standardizing the relationship between two variables, allowing a comparison of their linear association independent of units.
 
 ### Definition
 
-The correlation coefficient $$ \rho_{X,Y} $$ between two random variables $$ X $$ and $$ Y $$ is formally defined as:
+The correlation coefficient $$ \rho\_{X,Y} $$ between two random variables $$ X $$ and $$ Y $$ is formally defined as:
 
 $$
 \rho_{X,Y} = \frac{\text{Cov}(X, Y)}{\sigma_X \sigma_Y}
@@ -36,7 +36,7 @@ $$
 
 where $$ \text{Cov}(X, Y) $$ represents the covariance between $$ X $$ and $$ Y $$, $$ \sigma_X $$ and $$ \sigma_Y $$ are the standard deviations of $$ X $$ and $$ Y $$, respectively.
 
-This formula can be viewed as a “normalized” covariance, essentially adjusting the relationship between $$ X $$ and $$ Y $$ by their individual dispersions, or spreads. This normalization is the key: it removes the influence of scale, making $$ \rho_{X,Y} $$ a dimensionless quantity that ranges from -1 to 1.
+This formula can be viewed as a “normalized” covariance, essentially adjusting the relationship between $$ X $$ and $$ Y $$ by their individual dispersions, or spreads. This normalization is the key: it removes the influence of scale, making $$ \rho\_{X,Y} $$ a dimensionless quantity that ranges from -1 to 1.
 
 ### Derivation from Covariance
 
@@ -60,17 +60,17 @@ $$
 \rho_{X,Y} = \frac{E[(X - \mu_X)(Y - \mu_Y)]}{\sigma_X \sigma_Y} = \frac{\text{Cov}(X, Y)}{\sigma_X \sigma_Y}
 $$
 
-This reformulation gives us a measure of association on a standardized scale. Specifically, if $$ \rho_{X,Y} = 1 $$, there exists a perfect positive linear relationship between $$ X $$ and $$ Y $$: as $$ X $$ increases, $$ Y $$ increases proportionally. If $$ \rho_{X,Y} = -1 $$, the variables exhibit perfect negative linear correlation, where $$ Y $$ decreases as $$ X $$ increases. If $$ \rho_{X,Y} = 0 $$, there is no linear relationship between $$ X $$ and $$ Y $$.
+This reformulation gives us a measure of association on a standardized scale. Specifically, if $$ \rho*{X,Y} = 1 $$, there exists a perfect positive linear relationship between $$ X $$ and $$ Y $$: as $$ X $$ increases, $$ Y $$ increases proportionally. If $$ \rho*{X,Y} = -1 $$, the variables exhibit perfect negative linear correlation, where $$ Y $$ decreases as $$ X $$ increases. If $$ \rho\_{X,Y} = 0 $$, there is no linear relationship between $$ X $$ and $$ Y $$.
 
-### Other Properties 
+### Other Properties
 
-One of the most useful features of $$ \rho_{X,Y} $$ is its unit invariance. Unlike covariance, which scales with the units of $$X$$ and $$Y$$, correlation removes these effects by normalizing with standard deviations, making $$ \rho_{X,Y} $$ dimensionless. This quality enables comparisons across variables with different units or scales, ensuring that the strength of relationships is evaluated consistently, regardless of measurement. Furthermore, the symmetry of correlation is another noteworthy property: $$ \rho_{X,Y} = \rho_{Y,X} $$. This symmetry arises naturally from the covariance term and reinforces that correlation measures a mutual relationship between variables, independent of which one is considered first. These properties, together, establish the correlation coefficient as a powerful, standardized metric for interpreting linear dependencies across diverse contexts
+One of the most useful features of $$ \rho*{X,Y} $$ is its unit invariance. Unlike covariance, which scales with the units of $$X$$ and $$Y$$, correlation removes these effects by normalizing with standard deviations, making $$ \rho*{X,Y} $$ dimensionless. This quality enables comparisons across variables with different units or scales, ensuring that the strength of relationships is evaluated consistently, regardless of measurement. Furthermore, the symmetry of correlation is another noteworthy property: $$ \rho*{X,Y} = \rho*{Y,X} $$. This symmetry arises naturally from the covariance term and reinforces that correlation measures a mutual relationship between variables, independent of which one is considered first. These properties, together, establish the correlation coefficient as a powerful, standardized metric for interpreting linear dependencies across diverse contexts
 
 ---
 
 ## The Correlation Matrix
 
-When moving from a single pair of variables to multidimensional data, we naturally extend the concept of correlation to capture all pairwise relationships at once. This is where the correlation matrix $$ R $$ comes in, giving us a compact summary of the linear associations across an entire dataset. For a random vector $$ X = [X_1, X_2, \dots, X_n]^T $$, the correlation matrix $$ R $$ is an $$ n \times n $$ matrix, where each element $$ R_{ij} $$ represents the correlation coefficient between $$ X_i $$ and $$ X_j $$:
+When moving from a single pair of variables to multidimensional data, we naturally extend the concept of correlation to capture all pairwise relationships at once. This is where the correlation matrix $$ R $$ comes in, giving us a compact summary of the linear associations across an entire dataset. For a random vector $$ X = [X_1, X_2, \dots, X_n]^T $$, the correlation matrix $$ R $$ is an $$ n \times n $$ matrix, where each element $$ R\_{ij} $$ represents the correlation coefficient between $$ X_i $$ and $$ X_j $$:
 
 $$
 R_{ij} = \rho_{X_i, X_j} = \frac{\text{Cov}(X_i, X_j)}{\sigma_{X_i} \sigma_{X_j}}
@@ -84,7 +84,7 @@ $$
 R = \begin{bmatrix} \rho_{X_1, X_1} & \rho_{X_1, X_2} & \dots & \rho_{X_1, X_n} \\ \rho_{X_2, X_1} & \rho_{X_2, X_2} & \dots & \rho_{X_2, X_n} \\ \vdots & \vdots & \ddots & \vdots \\ \rho_{X_n, X_1} & \rho_{X_n, X_2} & \dots & \rho_{X_n, X_n} \end{bmatrix}.
 $$
 
-Each diagonal entry $$ R_{ii} $$ equals 1, since $$ \rho_{X_i, X_i} = \frac{\text{Cov}(X_i, X_i)}{\sigma_{X_i}^2} = 1 $$. This makes sense because a variable is perfectly correlated with itself. The off-diagonal elements $$ R_{ij} $$ (for $$ i \neq j $$) give us the correlation between different variables, capturing their linear relationships in a standardized form that’s easy to interpret across the entire matrix.
+Each diagonal entry $$ R*{ii} $$ equals 1, since $$ \rho*{X*i, X_i} = \frac{\text{Cov}(X_i, X_i)}{\sigma*{X*i}^2} = 1 $$. This makes sense because a variable is perfectly correlated with itself. The off-diagonal elements $$ R*{ij} $$ (for $$ i \neq j $$) give us the correlation between different variables, capturing their linear relationships in a standardized form that’s easy to interpret across the entire matrix.
 
 ### Relationship to the Covariance Matrix
 
@@ -102,8 +102,8 @@ $$
 
 Expanding this calculation, let’s see how each entry in $$ R $$ is computed in terms of $$ \Sigma $$ and $$ D $$:
 
-1. Start with the covariance matrix element $$ \Sigma_{ij} = \text{Cov}(X_i, X_j) $$.
-2. Divide $$ \Sigma_{ij} $$ by $$ \sigma_{X_i} \sigma_{X_j} $$, where $$ \sigma_{X_i} = \sqrt{\Sigma_{ii}} $$ and $$ \sigma_{X_j} = \sqrt{\Sigma_{jj}} $$.
+1. Start with the covariance matrix element $$ \Sigma\_{ij} = \text{Cov}(X_i, X_j) $$.
+2. Divide $$ \Sigma*{ij} $$ by $$ \sigma*{X*i} \sigma*{X*j} $$, where $$ \sigma*{X*i} = \sqrt{\Sigma*{ii}} $$ and $$ \sigma*{X_j} = \sqrt{\Sigma*{jj}} $$.
 3. This yields each element in $$ R $$ as:
 
    $$
@@ -112,13 +112,13 @@ Expanding this calculation, let’s see how each entry in $$ R $$ is computed in
 
 In matrix form, we achieve this by pre-multiplying and post-multiplying $$ \Sigma $$ with $$ D^{-1} $$, transforming the raw covariance entries into standardized, unitless correlation coefficients. This transformation is crucial when comparing variables measured on different scales, as it removes any units, letting us focus purely on the strength of the relationships.
 
-### Some Properties 
+### Some Properties
 
-The correlation matrix $$ R $$ possesses a few key properties that make it an elegant and powerful tool for analyzing multidimensional data. First, it is symmetric by nature, since $$ \rho_{X_i, X_j} = \rho_{X_j, X_i} $$ for any pair of variables $$ X_i $$ and $$ X_j $$. This symmetry ensures that each pairwise correlation is mutual and gives the matrix a balanced, mirror-like structure around its diagonal. This diagonal, in turn, consists entirely of ones, as each variable is perfectly correlated with itself—a subtle reminder that correlation is inherently a self-consistent measure.
+The correlation matrix $$ R $$ possesses a few key properties that make it an elegant and powerful tool for analyzing multidimensional data. First, it is symmetric by nature, since $$ \rho*{X_i, X_j} = \rho*{X_j, X_i} $$ for any pair of variables $$ X_i $$ and $$ X_j $$. This symmetry ensures that each pairwise correlation is mutual and gives the matrix a balanced, mirror-like structure around its diagonal. This diagonal, in turn, consists entirely of ones, as each variable is perfectly correlated with itself—a subtle reminder that correlation is inherently a self-consistent measure.
 
-In addition to its symmetry, $$ R $$ is positive semi-definite, meaning that for any vector $$ z $$, the quadratic form $$ z^T R z $$ is non-negative. This positive semi-definiteness implies that all eigenvalues of $$ R $$ are non-negative, which is significant because it confirms that $$ R $$ has a stable variance structure. This property becomes particularly valuable in applications like principal component analysis (PCA), where the correlation matrix’s eigenvalues reflect the spread of the data along different directions. 
+In addition to its symmetry, $$ R $$ is positive semi-definite, meaning that for any vector $$ z $$, the quadratic form $$ z^T R z $$ is non-negative. This positive semi-definiteness implies that all eigenvalues of $$ R $$ are non-negative, which is significant because it confirms that $$ R $$ has a stable variance structure. This property becomes particularly valuable in applications like principal component analysis (PCA), where the correlation matrix’s eigenvalues reflect the spread of the data along different directions.
 
-Furthermore, every element in $$ R $$ falls within the interval $$[-1, 1]$$, a direct result of the correlation coefficient’s own bounded nature. This bounded range ensures that each entry in $$ R $$ is a pure, unitless indicator of linear association strength. Regardless of the scale or units of the original variables, the values in $$ R $$ give a consistent, standardized view of how variables align with each other. 
+Furthermore, every element in $$ R $$ falls within the interval $$[-1, 1]$$, a direct result of the correlation coefficient’s own bounded nature. This bounded range ensures that each entry in $$ R $$ is a pure, unitless indicator of linear association strength. Regardless of the scale or units of the original variables, the values in $$ R $$ give a consistent, standardized view of how variables align with each other.
 
 ---
 
@@ -126,13 +126,13 @@ Furthermore, every element in $$ R $$ falls within the interval $$[-1, 1]$$, a d
 
 ### Geometric Interpretation: Angles and Alignments
 
-Consider two random variables $$ X_i $$ and $$ X_j $$, each represented as vectors in an $$ n $$-dimensional data space. The correlation coefficient $$ \rho_{X_i, X_j} $$ between $$ X_i $$ and $$ X_j $$ can be understood as the cosine of the angle $$ \theta $$ between these two vectors. Formally, this relationship is given by:
+Consider two random variables $$ X*i $$ and $$ X_j $$, each represented as vectors in an $$ n $$-dimensional data space. The correlation coefficient $$ \rho*{X_i, X_j} $$ between $$ X_i $$ and $$ X_j $$ can be understood as the cosine of the angle $$ \theta $$ between these two vectors. Formally, this relationship is given by:
 
 $$
 \rho_{X_i, X_j} = \cos \theta_{ij}
 $$
 
-where $$ \theta_{ij} $$ is the angle between the vectors corresponding to $$ X_i $$ and $$ X_j $$. When $$ \rho_{X_i, X_j} = 1 $$, the vectors point in the same direction ($$ \theta = 0^\circ $$), indicating a perfect positive linear relationship. Conversely, if $$ \rho_{X_i, X_j} = -1 $$, the vectors point in opposite directions ($$ \theta = 180^\circ $$), representing a perfect negative linear relationship. A correlation of zero corresponds to $$ \theta = 90^\circ $$, suggesting that the vectors are orthogonal and thus linearly uncorrelated.
+where $$ \theta*{ij} $$ is the angle between the vectors corresponding to $$ X_i $$ and $$ X_j $$. When $$ \rho*{X*i, X_j} = 1 $$, the vectors point in the same direction ($$ \theta = 0^\circ $$), indicating a perfect positive linear relationship. Conversely, if $$ \rho*{X_i, X_j} = -1 $$, the vectors point in opposite directions ($$ \theta = 180^\circ $$), representing a perfect negative linear relationship. A correlation of zero corresponds to $$ \theta = 90^\circ $$, suggesting that the vectors are orthogonal and thus linearly uncorrelated.
 
 This geometric interpretation gives a clear, visual sense of the relationships encoded in $$ R $$: the closer the angle between two variables’ vectors is to zero, the stronger and more positive their correlation; the closer the angle is to $$ 180^\circ $$, the stronger and more negative the correlation. And when the vectors are perpendicular, they are uncorrelated in a linear sense, even though nonlinear relationships might still exist.
 
@@ -165,13 +165,14 @@ The columns of $$ Q $$, the eigenvectors, form the new basis in which the data i
 By using $$ R $$ in PCA, we effectively perform dimensionality reduction based on the strength of the linear relationships between variables, preserving the most informative aspects of the data while discarding redundancy.
 
 ### Demo
+
 To illustrate how PCA leverages the correlation matrix $$ R $$ to extract meaningful linear patterns, let’s walk through a concrete example. Suppose we have a dataset with three variables—say, height, weight, and age—measured across a sample of individuals. Let’s assume that after standardizing the data, we calculate the correlation matrix $$ R $$ as follows:
 
 $$
 R = \begin{bmatrix} 1 & 0.8 & 0.5 \\ 0.8 & 1 & 0.4 \\ 0.5 & 0.4 & 1 \end{bmatrix}
 $$
 
-Each entry $$ R_{ij} $$ represents the correlation between pairs of variables. For example, the correlation between height and weight is 0.8, indicating a strong positive linear relationship, while the correlation between height and age is 0.5, a moderate positive association.
+Each entry $$ R\_{ij} $$ represents the correlation between pairs of variables. For example, the correlation between height and weight is 0.8, indicating a strong positive linear relationship, while the correlation between height and age is 0.5, a moderate positive association.
 
 **Step 1: Eigen-Decomposition of the Correlation Matrix**
 
@@ -208,6 +209,7 @@ where $$ Q $$ is the matrix of eigenvectors:
 $$
 Q = \begin{bmatrix} 0.7 & -0.5 & 0.5 \\ 0.6 & 0.7 & -0.2 \\ 0.4 & 0.5 & 0.8 \end{bmatrix}
 $$
+
 For each individual in the dataset, their original measurements in terms of height, weight, and age are transformed into scores along PC1, PC2, and PC3. These scores reflect the new, simplified representation of each individual in terms of the most significant patterns in the data. For example, projecting the original data onto PC1 (the direction of greatest variance) gives a one-dimensional summary of “size” variation across individuals, effectively condensing the information from three variables into a single informative score.
 
 **Step 4: Reducing Dimensionality**
@@ -268,7 +270,7 @@ This reduced representation is particularly useful for visualization: each indiv
 
 **Summary**
 
-In this example, PCA has taken a dataset with three interrelated variables and transformed it into a new set of uncorrelated components that reveal the primary patterns of variability. By examining the eigenvalues and eigenvectors of the correlation matrix $$ R $$, we extracted principal components that provided both a compact and interpretable representation of the data. 
+In this example, PCA has taken a dataset with three interrelated variables and transformed it into a new set of uncorrelated components that reveal the primary patterns of variability. By examining the eigenvalues and eigenvectors of the correlation matrix $$ R $$, we extracted principal components that provided both a compact and interpretable representation of the data.
 
 ---
 

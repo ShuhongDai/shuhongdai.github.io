@@ -14,13 +14,13 @@ toc:
 
 ## Introduction
 
-When you first encounter the world of multivariate Gaussian distributions, it’s easy to feel like you’ve entered a labyrinth of equations, variables, and matrices. But beneath the mathematical machinery lies a beautifully structured framework that helps us understand complex data, and in many ways, it’s as elegant as it is powerful. 
+When you first encounter the world of multivariate Gaussian distributions, it’s easy to feel like you’ve entered a labyrinth of equations, variables, and matrices. But beneath the mathematical machinery lies a beautifully structured framework that helps us understand complex data, and in many ways, it’s as elegant as it is powerful.
 
 In statistics, the Gaussian, or “normal” distribution, is often our first stop when we dive into data analysis. We’ve all seen its familiar bell-shaped curve, neatly centered around a mean, showing us the most probable values a single variable might take. But in reality, data rarely exists in a vacuum. Many variables are interconnected, forming a “multivariate” data landscape where each variable influences and interacts with others. Here, the multivariate Gaussian distribution steps in as a natural extension of the single-variable Gaussian, providing us a way to model these multidimensional relationships.
 
 At the heart of this distribution are two key players: the mean vector and the covariance matrix. The mean vector is the multivariate equivalent of the single-variable mean, summarizing the central tendencies of all variables in one go. It tells us where the “center” of our data cloud lies, capturing the average or typical values across all dimensions.
 
->Updated on June 22, 2024: Additionally, [a new blog post](https://shuhongdai.github.io/blog/2024/Correlation_Coefficients/) has been published that expands on this topic with content covering correlation coefficients and the correlation coefficient matrix.
+> Updated on June 22, 2024: Additionally, [a new blog post](https://shuhongdai.github.io/blog/2024/Correlation_Coefficients/) has been published that expands on this topic with content covering correlation coefficients and the correlation coefficient matrix.
 
 The covariance matrix, on the other hand, is a bit like a backstage operator. It describes how variables interact with each other, revealing not just their individual spreads but also how they move in tandem. Each entry in this matrix provides insights into the relationship between pairs of variables, showing whether they rise and fall together or behave independently. Together, the mean vector and covariance matrix form a powerful duo, shaping the geometry of the distribution and giving us a complete picture of how our data points are scattered and related.
 
@@ -40,7 +40,6 @@ $$
 \mu = \begin{bmatrix} \mu_1 \\ \mu_2 \\ \vdots \\ \mu_n \end{bmatrix},
 $$
 
-
 where each $$ \mu_i = E[X_i] $$ represents the expected value of the $$i$$-th variable. Essentially, the mean vector $$ \mu $$ gives us a one-stop summary of the “average” position of all dimensions, capturing the expected value along each axis of the multidimensional data space.
 
 ### Derivation: Expectation of the Mean Vector
@@ -51,13 +50,11 @@ $$
 \mu = E[X].
 $$
 
-
 Breaking this down, **the expectation of $$ X $$ is computed component-wise**. That is,
 
 $$
 \mu = E[X] = \begin{bmatrix} E[X_1] \\ E[X_2] \\ \vdots \\ E[X_n] \end{bmatrix} = \begin{bmatrix} \mu_1 \\ \mu_2 \\ \vdots \\ \mu_n \end{bmatrix}.
 $$
-
 
 This form allows us to treat each dimension independently when calculating the mean, **even though they may be interdependent in terms of their distributions.**
 
@@ -94,7 +91,6 @@ Since $$ b $$ is constant, $$ E[b] = b $$. Additionally, because expectation is 
 $$
 E[Y] = A \mu + b.
 $$
-
 
 This property is not only elegant but incredibly useful. It implies that, regardless of the transformation (as long as it’s linear), we can predict how the mean vector shifts without recalculating everything from scratch. This “transformation invariance” simplifies a lot of practical work in data analysis, letting us predict and manipulate mean vectors in transformed spaces.
 
@@ -186,6 +182,7 @@ This second snippet applies our transformation and then calculates the new mean 
 ---
 
 ## Covariance Matrix – Definition and Computation
+
 If the mean vector $$ \mu $$ gives us a sense of location, **then the covariance matrix $$ \Sigma $$ gives us a sense of shape.** It describes how variables are spread and how they relate to each other, capturing both individual variances and pairwise covariances.
 
 ### Definition
@@ -196,9 +193,9 @@ $$
 \Sigma = \begin{bmatrix} \text{Cov}(X_1, X_1) & \text{Cov}(X_1, X_2) & \cdots & \text{Cov}(X_1, X_n) \\ \text{Cov}(X_2, X_1) & \text{Cov}(X_2, X_2) & \cdots & \text{Cov}(X_2, X_n) \\ \vdots & \vdots & \ddots & \vdots \\ \text{Cov}(X_n, X_1) & \text{Cov}(X_n, X_2) & \cdots & \text{Cov}(X_n, X_n) \end{bmatrix},
 $$
 
-where each element $$ \Sigma_{ij} = \text{Cov}(X_i, X_j) $$ is the covariance between $$ X_i $$ and $$ X_j $$.
+where each element $$ \Sigma\_{ij} = \text{Cov}(X_i, X_j) $$ is the covariance between $$ X_i $$ and $$ X_j $$.
 
-Covariance, in essence, measures the degree to which two variables vary together. When $$ i = j $$, $$ \Sigma_{ii} = \text{Var}(X_i) $$, representing the variance of $$ X_i $$ itself.
+Covariance, in essence, measures the degree to which two variables vary together. When $$ i = j $$, $$ \Sigma\_{ii} = \text{Var}(X_i) $$, representing the variance of $$ X_i $$ itself.
 
 ### Derivation: The Formula for Covariance
 
@@ -224,7 +221,7 @@ $$
 \Sigma = E \left[ \begin{bmatrix} X_1 - \mu_1 \\ X_2 - \mu_2 \\ \vdots \\ X_n - \mu_n \end{bmatrix} \begin{bmatrix} X_1 - \mu_1 & X_2 - \mu_2 & \cdots & X_n - \mu_n \end{bmatrix} \right].
 $$
 
-When we take the expectation, each element $$ \Sigma_{ij} $$ becomes:
+When we take the expectation, each element $$ \Sigma\_{ij} $$ becomes:
 
 $$
 \Sigma_{ij} = E[(X_i - \mu_i)(X_j - \mu_j)].
@@ -338,6 +335,7 @@ plt.show()
 ```
 
 In this code, we:
+
 1. Generate a data cloud based on $$ \Sigma $$, capturing the positive correlation between $$ X_1 $$ and $$ X_2 $$.
 2. Plot the data points along with the mean vector.
 3. Use the eigenvalues and eigenvectors of $$ \Sigma $$ to plot an ellipse representing the covariance structure. The orientation and size of this ellipse reflect the spread and correlation encoded in $$ \Sigma $$, with the longer axis aligned along the direction of greatest variance.
@@ -384,6 +382,7 @@ plt.show()
 ```
 
 In this visualization:
+
 1. We transform the data by applying $$ A $$, which stretches and rotates the original distribution.
 2. We compute the transformed covariance matrix as $$ A \Sigma A^T $$ and plot the new covariance ellipse to represent its structure.
 
@@ -400,6 +399,7 @@ In this visualization:
 ### Observations
 
 With this code, we see the impact of a linear transformation on the covariance matrix:
+
 - **Spread and Orientation**: The transformed covariance ellipse is reshaped and reoriented. The principal axes of the ellipse align with the directions of greatest and least variance in the transformed data, which reflect the new covariance structure encoded by $$ A \Sigma A^T $$.
 - **Predicted Transformation**: The calculation $$ A \Sigma A^T $$ matches the new spread, showing that even though the data has shifted in space, we can predict exactly how its variability changes.
 
@@ -407,13 +407,14 @@ With this code, we see the impact of a linear transformation on the covariance m
 
 ## The Geometric Meaning of the Covariance Matrix
 
-At this point, we know the covariance matrix $$ \Sigma $$ defines the structure of a multivariate Gaussian distribution in terms of variance and covariance. But what does $$ \Sigma $$ really *look like*? In a two-dimensional space, the covariance matrix paints an elegant picture of geometry, describing a distribution’s shape as an ellipse. This section is a journey into the geometric implications of $$ \Sigma $$, where each feature of the covariance matrix corresponds to a unique aspect of the data’s spatial spread.
+At this point, we know the covariance matrix $$ \Sigma $$ defines the structure of a multivariate Gaussian distribution in terms of variance and covariance. But what does $$ \Sigma $$ really _look like_? In a two-dimensional space, the covariance matrix paints an elegant picture of geometry, describing a distribution’s shape as an ellipse. This section is a journey into the geometric implications of $$ \Sigma $$, where each feature of the covariance matrix corresponds to a unique aspect of the data’s spatial spread.
 
 ### Elliptical Contours: The Shape of Data in 2D
 
 In the case of a two-dimensional Gaussian distribution, the contours of equal density—think of these as the “outlines” or “borders” where data points tend to cluster—form concentric ellipses. These ellipses reveal the spread of data around the mean vector $$ \mu $$ and are directly determined by the covariance matrix $$ \Sigma $$.
 
 Each ellipse’s geometry—the length and direction of its axes—offers a visual interpretation of $$ \Sigma $$:
+
 1. **Principal Axes (Direction)**: The directions of the ellipse’s axes correspond to the eigenvectors of $$ \Sigma $$. These eigenvectors are vectors in space that point along the directions where the data varies the most (the “principal directions”).
 2. **Axis Lengths (Spread)**: The lengths of these axes are proportional to the square roots of the eigenvalues of $$ \Sigma $$. The larger an eigenvalue, the longer the axis, meaning that data stretches more along this direction. Smaller eigenvalues correspond to shorter axes, indicating less variability in that direction.
 
@@ -426,6 +427,7 @@ $$
 $$
 
 where:
+
 - $$ Q $$ is a matrix of eigenvectors of $$ \Sigma $$, and
 - $$ \Lambda $$ is a diagonal matrix of eigenvalues of $$ \Sigma $$, with each eigenvalue corresponding to the variance along a principal direction.
 
@@ -467,8 +469,8 @@ eigvals, eigvecs = np.linalg.eigh(cov)
 
 # Plot eigenvectors as principal directions
 for i in range(len(eigvals)):
-    plt.plot([mu[0], mu[0] + np.sqrt(eigvals[i]) * eigvecs[0, i]], 
-             [mu[1], mu[1] + np.sqrt(eigvals[i]) * eigvecs[1, i]], 
+    plt.plot([mu[0], mu[0] + np.sqrt(eigvals[i]) * eigvecs[0, i]],
+             [mu[1], mu[1] + np.sqrt(eigvals[i]) * eigvecs[1, i]],
              label=f'Principal Direction {i+1}', linewidth=2)
 
 plt.legend()
@@ -476,6 +478,7 @@ plt.show()
 ```
 
 In this code, we:
+
 1. Generate data according to the mean $$ \mu $$ and covariance matrix $$ \Sigma $$.
 2. Plot the data along with the mean vector.
 3. Compute the eigenvalues and eigenvectors of $$ \Sigma $$, and overlay the eigenvectors on the data, scaled by the square root of their corresponding eigenvalues to represent the primary directions and spread.
@@ -517,6 +520,7 @@ plt.show()
 ```
 
 This plot gives us a clear visual representation of the covariance matrix’s “footprint” on the data:
+
 - **Direction**: The ellipse’s major and minor axes correspond to the principal directions (eigenvectors) of the data spread.
 - **Length of Axes**: The lengths of these axes are proportional to the square roots of the eigenvalues of $$ \Sigma $$, indicating the variance along each direction.
 
@@ -533,6 +537,7 @@ This plot gives us a clear visual representation of the covariance matrix’s �
 ### Geometric Takeaways
 
 So, what does this ellipse tell us about the data’s geometry?
+
 1. **Primary Spread**: The major axis shows where the data is most dispersed, aligned along the eigenvector with the largest eigenvalue. This direction represents the direction of greatest variance.
 2. **Secondary Spread**: The minor axis, perpendicular to the major axis, aligns with the eigenvector of the smaller eigenvalue, showing where the data is more tightly clustered.
 
@@ -586,7 +591,6 @@ $$
 \hat{\mu} = \begin{bmatrix} 4.8 \\ 6.6 \end{bmatrix}.
 $$
 
-
 ### Step 2: Calculate the Sample Covariance Matrix
 
 Next, let’s calculate the sample covariance matrix, which tells us not only the variability of each variable but also how $$ X_1 $$ and $$ X_2 $$ move in relation to each other. The sample covariance matrix $$ \hat{\Sigma} $$ is defined as:
@@ -600,37 +604,49 @@ For our five observations, $$ N = 5 $$, so we’ll divide by $$ 4 $$ (that’s $
 Let’s compute each term $$ (X_i - \hat{\mu})(X_i - \hat{\mu})^T $$ for each observation:
 
 1. **For $$ X_1 = \begin{bmatrix} 2 \\ 3 \end{bmatrix} $$:**
+
    $$
    X_1 - \hat{\mu} = \begin{bmatrix} 2 \\ 3 \end{bmatrix} - \begin{bmatrix} 4.8 \\ 6.6 \end{bmatrix} = \begin{bmatrix} -2.8 \\ -3.6 \end{bmatrix},
    $$
+
    and
+
    $$
    (X_1 - \hat{\mu})(X_1 - \hat{\mu})^T = \begin{bmatrix} -2.8 \\ -3.6 \end{bmatrix} \begin{bmatrix} -2.8 & -3.6 \end{bmatrix} = \begin{bmatrix} 7.84 & 10.08 \\ 10.08 & 12.96 \end{bmatrix}.
    $$
 
 2. **For $$ X_2 = \begin{bmatrix} 3 \\ 5 \end{bmatrix} $$:**
+
    $$
    X_2 - \hat{\mu} = \begin{bmatrix} 3 \\ 5 \end{bmatrix} - \begin{bmatrix} 4.8 \\ 6.6 \end{bmatrix} = \begin{bmatrix} -1.8 \\ -1.6 \end{bmatrix},
    $$
+
    and
+
    $$
    (X_2 - \hat{\mu})(X_2 - \hat{\mu})^T = \begin{bmatrix} -1.8 \\ -1.6 \end{bmatrix} \begin{bmatrix} -1.8 & -1.6 \end{bmatrix} = \begin{bmatrix} 3.24 & 2.88 \\ 2.88 & 2.56 \end{bmatrix}.
    $$
 
 3. **For $$ X_3 = \begin{bmatrix} 5 \\ 7 \end{bmatrix} $$:**
+
    $$
    X_3 - \hat{\mu} = \begin{bmatrix} 5 \\ 7 \end{bmatrix} - \begin{bmatrix} 4.8 \\ 6.6 \end{bmatrix} = \begin{bmatrix} 0.2 \\ 0.4 \end{bmatrix},
    $$
+
    and
+
    $$
    (X_3 - \hat{\mu})(X_3 - \hat{\mu})^T = \begin{bmatrix} 0.2 \\ 0.4 \end{bmatrix} \begin{bmatrix} 0.2 & 0.4 \end{bmatrix} = \begin{bmatrix} 0.04 & 0.08 \\ 0.08 & 0.16 \end{bmatrix}.
    $$
 
 4. **For $$ X_4 = \begin{bmatrix} 6 \\ 8 \end{bmatrix} $$:**
+
    $$
    X_4 - \hat{\mu} = \begin{bmatrix} 6 \\ 8 \end{bmatrix} - \begin{bmatrix} 4.8 \\ 6.6 \end{bmatrix} = \begin{bmatrix} 1.2 \\ 1.4 \end{bmatrix},
    $$
+
    and
+
    $$
    (X_4 - \hat{\mu})(X_4 - \hat{\mu})^T = \begin{bmatrix} 1.2 \\ 1.4 \end{bmatrix} \begin{bmatrix} 1.2 & 1.4 \end{bmatrix} = \begin{bmatrix} 1.44 & 1.68 \\ 1.68 & 1.96 \end{bmatrix}.
    $$
@@ -647,18 +663,16 @@ Let’s compute each term $$ (X_i - \hat{\mu})(X_i - \hat{\mu})^T $$ for each ob
 Now, we add these matrices and divide by $$ N - 1 = 4 $$ to get the sample covariance matrix:
 
 $$
-\hat{\Sigma} = \frac{1}{4} \left( \begin{bmatrix} 7.84 & 10.08 \\ 10.08 & 12.96 \end{bmatrix} + \begin{bmatrix} 3.24 & 2.88 \\ 2.88 & 2.56 \end{bmatrix} + \begin{bmatrix} 0.04 & 0.08 \\ 0.08 & 
+\hat{\Sigma} = \frac{1}{4} \left( \begin{bmatrix} 7.84 & 10.08 \\ 10.08 & 12.96 \end{bmatrix} + \begin{bmatrix} 3.24 & 2.88 \\ 2.88 & 2.56 \end{bmatrix} + \begin{bmatrix} 0.04 & 0.08 \\ 0.08 &
 
 0.16 \end{bmatrix} + \begin{bmatrix} 1.44 & 1.68 \\ 1.68 & 1.96 \end{bmatrix} + \begin{bmatrix} 10.24 & 10.88 \\ 10.88 & 11.56 \end{bmatrix} \right).
 $$
-
 
 After summing the matrices:
 
 $$
 \hat{\Sigma} = \frac{1}{4} \begin{bmatrix} 22.8 & 25.6 \\ 25.6 & 29.2 \end{bmatrix} = \begin{bmatrix} 5.7 & 6.4 \\ 6.4 & 7.3 \end{bmatrix}.
 $$
-
 
 ### Summary
 
@@ -701,7 +715,7 @@ To understand why zero covariance does not necessarily mean independence, consid
 Let $$ X $$ be a standard normal random variable: $$ X \sim N(0, 1) $$. Now define $$ Y = X^2 $$. Clearly, $$ Y $$ depends on $$ X $$; in fact, $$ Y $$ is entirely determined by $$ X $$, so $$ X $$ and $$ Y $$ are not independent.
 
 1. **Calculating the Covariance**: We’ll calculate $$ \text{Cov}(X, Y) $$ to see if they’re uncorrelated.
-  
+
    $$
    \text{Cov}(X, Y) = E[(X - E[X])(Y - E[Y])].
    $$
@@ -713,11 +727,10 @@ Let $$ X $$ be a standard normal random variable: $$ X \sim N(0, 1) $$. Now defi
    $$
 
 2. **Expectation of Odd Moments**: Given that $$ X $$ is normally distributed with mean 0, all odd moments of $$ X $$ (such as $$ E[X] $$ and $$ E[X^3] $$) are zero. Therefore,
-  
+
    $$
    \text{Cov}(X, Y) = E[X^3] - E[X] = 0 - 0 = 0.
    $$
-
 
    Thus, $$ \text{Cov}(X, Y) = 0 $$, indicating that $$ X $$ and $$ Y $$ are uncorrelated. But as we know, $$ Y = X^2 $$, which is entirely determined by $$ X $$. Therefore, they are not independent, even though they are uncorrelated.
 
@@ -725,7 +738,7 @@ This example highlights a key takeaway: **uncorrelated variables are not necessa
 
 ### Role of the Covariance Matrix in Independence Analysis
 
-The covariance matrix $$ \Sigma $$ provides us with a way to examine linear dependencies between variables. Each off-diagonal element $$ \Sigma_{ij} = \text{Cov}(X_i, X_j) $$ indicates the extent to which two variables vary together. If all off-diagonal entries of $$ \Sigma $$ are zero, we know that each pair of variables is **uncorrelated**. However, this does not guarantee independence.
+The covariance matrix $$ \Sigma $$ provides us with a way to examine linear dependencies between variables. Each off-diagonal element $$ \Sigma\_{ij} = \text{Cov}(X_i, X_j) $$ indicates the extent to which two variables vary together. If all off-diagonal entries of $$ \Sigma $$ are zero, we know that each pair of variables is **uncorrelated**. However, this does not guarantee independence.
 
 For multivariate normal distributions, however, the story is simpler. In a multivariate normal distribution, uncorrelated variables are indeed independent. Specifically, if $$ X \sim N(\mu, \Sigma) $$, then zero off-diagonal entries in $$ \Sigma $$ imply that the components of $$ X $$ are independent. This is a special property of the Gaussian distribution and does not hold in general.
 
@@ -741,4 +754,4 @@ In summary, the covariance matrix is a powerful tool for understanding linear re
 
 The mean vector serves as the “center of gravity” for the data, shifting predictably under transformations and providing a concise summary of central tendencies across dimensions. Meanwhile, the covariance matrix is a lens into the data's geometry. It encodes not only the individual variances of each variable but also the pairwise interactions that reveal whether variables rise and fall together or act independently. This matrix’s symmetry and positive semi-definiteness give it a unique role in shaping data contours and helping analysts visualize distribution shape, orientation, and spread.
 
-But as we’ve seen, the covariance matrix also has its limits. While it efficiently captures linear relationships, it cannot capture the entire complexity of data dependencies. As our exploration of independence versus uncorrelatedness shows, true independence requires more than just a zero covariance—especially in non-Gaussian settings where nonlinear dependencies can lie hidden. Understanding these nuances is crucial for effective data analysis. In real-world applications, whether in finance, biology, or machine learning, knowing when the covariance matrix can (and cannot) tell the full story allows us to apply these tools more accurately and creatively. 
+But as we’ve seen, the covariance matrix also has its limits. While it efficiently captures linear relationships, it cannot capture the entire complexity of data dependencies. As our exploration of independence versus uncorrelatedness shows, true independence requires more than just a zero covariance—especially in non-Gaussian settings where nonlinear dependencies can lie hidden. Understanding these nuances is crucial for effective data analysis. In real-world applications, whether in finance, biology, or machine learning, knowing when the covariance matrix can (and cannot) tell the full story allows us to apply these tools more accurately and creatively.
