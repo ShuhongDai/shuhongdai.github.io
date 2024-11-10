@@ -81,8 +81,9 @@ $$
 In other words, if $$ X $$ is a random vector with a covariance matrix $$ \Sigma $$, then $$ R $$ is constructed element-by-element as:
 
 $$
-R = \begin{bmatrix} \rho_{X_1, X_1} & \rho_{X_1, X_2} & \dots & \rho_{X_1, X_n} \\ \rho_{X_2, X_1} & \rho_{X_2, X_2} & \dots & \rho_{X_2, X_n} \\ \vdots & \vdots & \ddots & \vdots \\ \rho_{X_n, X_1} & \rho_{X_n, X_2} & \dots & \rho_{X_n, X_n} \end{bmatrix}
+R = \begin{bmatrix} \rho_{X_1, X_1} & \rho_{X_1, X_2} & \dots & \rho_{X_1, X_n} \\ \rho_{X_2, X_1} & \rho_{X_2, X_2} & \dots & \rho_{X_2, X_n} \\ \vdots & \vdots & \ddots & \vdots \\ \rho_{X_n, X_1} & \rho_{X_n, X_2} & \dots & \rho_{X_n, X_n} \end{bmatrix}.
 $$
+
 Each diagonal entry $$ R_{ii} $$ equals 1, since $$ \rho_{X_i, X_i} = \frac{\text{Cov}(X_i, X_i)}{\sigma_{X_i}^2} = 1 $$. This makes sense because a variable is perfectly correlated with itself. The off-diagonal elements $$ R_{ij} $$ (for $$ i \neq j $$) give us the correlation between different variables, capturing their linear relationships in a standardized form that’s easy to interpret across the entire matrix.
 
 ### Relationship to the Covariance Matrix
@@ -92,11 +93,13 @@ The correlation matrix $$ R $$ is directly derived from the covariance matrix $$
 $$
 R = D^{-1} \Sigma D^{-1}
 $$
+
 where $$ D $$ is the diagonal matrix of standard deviations, given by:
 
 $$
 D = \text{diag}(\sigma_{X_1}, \sigma_{X_2}, \dots, \sigma_{X_n}).
 $$
+
 Expanding this calculation, let’s see how each entry in $$ R $$ is computed in terms of $$ \Sigma $$ and $$ D $$:
 
 1. Start with the covariance matrix element $$ \Sigma_{ij} = \text{Cov}(X_i, X_j) $$.
