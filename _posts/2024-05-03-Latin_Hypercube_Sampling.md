@@ -7,6 +7,7 @@ tags: formatting code
 categories: sample-posts
 tabs: true
 featured: true
+thumbnail: /assets/posts_img/2024-05-03/thumbnail.png
 toc:
   sidebar: left
 ---
@@ -258,10 +259,127 @@ One way to address these limitations is by hybridizing LHS with other sampling t
 
 ---
 
+## Demo
+Here’s a demonstration of LHS across different dimensions. In 2D, we see LHS distributing sample points evenly across the grid, ensuring each part of the space is represented. In 3D, this principle extends gracefully, capturing a well-balanced spread across all three dimensions. Finally, in 4D, we employ dimensionality reduction to visualize the sampling density, revealing how LHS continues to provide comprehensive coverage even in complex, multi-dimensional settings.
+
+{% assign img_name1 = "2d.png" | split: "/" | last | split: "." | first %}
+{% include figure.liquid
+  path="/assets/posts_img/2024-05-03/2d.png"
+  class="img-fluid"
+  alt=img_name1
+  zoomable=true
+  width="600"
+  height="400"
+%}
+
+{% assign img_name2 = "3d.png" | split: "/" | last | split: "." | first %}
+{% include figure.liquid
+  path="/assets/posts_img/2024-05-03/3d.png"
+  class="img-fluid"
+  alt=img_name2
+  zoomable=true
+  width="600"
+  height="400"
+%}
+
+{% assign img_name3 = "4d.png" | split: "/" | last | split: "." | first %}
+{% include figure.liquid
+  path="/assets/posts_img/2024-05-03/4d.png"
+  class="img-fluid"
+  alt=img_name3
+  zoomable=true
+  width="600"
+  height="400"
+%}
+
+```python
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+from sklearn.decomposition import PCA
+from scipy.stats import qmc
+
+# Set global Seaborn style for consistent visualization
+sns.set(style="whitegrid", palette="muted")
+
+# Number of samples and different dimensions to illustrate LHS sampling
+n_samples = 100
+dimensions = [2, 3, 4]
+
+# Function to generate Latin Hypercube Sampling points
+def generate_lhs_samples(dim, n_samples):
+    sampler = qmc.LatinHypercube(d=dim)
+    sample = sampler.random(n_samples)
+    return sample
+
+# Function to reduce dimensions using PCA (for high-dimensional data)
+def reduce_dimension(data):
+    pca = PCA(n_components=2)
+    return pca.fit_transform(data)
+
+# Plotting 2D LHS samples
+def plot_2d_lhs(samples, title="2D LHS Sampling"):
+    plt.figure(figsize=(8, 6))
+    sns.scatterplot(x=samples[:, 0], y=samples[:, 1], color="blue", s=50, edgecolor="w", alpha=0.7)
+    plt.title(title)
+    plt.xlabel("Dimension 1")
+    plt.ylabel("Dimension 2")
+    plt.grid(True)
+    plt.show()
+
+# Plotting 3D LHS samples with a 3D perspective
+def plot_3d_lhs(samples, title="3D LHS Sampling"):
+    fig = plt.figure(figsize=(10, 8))
+    ax = fig.add_subplot(111, projection='3d')  # Create 3D projection
+    ax.scatter(samples[:, 0], samples[:, 1], samples[:, 2], color="green", s=50, edgecolor="w", alpha=0.7)
+    
+    ax.set_title(title)
+    ax.set_xlabel("Dimension 1")
+    ax.set_ylabel("Dimension 2")
+    ax.set_zlabel("Dimension 3")
+    
+    plt.show()
+
+# Plotting 4D LHS samples reduced to 2D with density map
+def plot_4d_lhs_with_density(samples, title="4D LHS Sampling (PCA Reduced)"):
+    # Apply PCA to reduce the 4D data to 2D
+    reduced_samples = reduce_dimension(samples)
+    x, y = reduced_samples[:, 0], reduced_samples[:, 1]
+    
+    plt.figure(figsize=(8, 6))
+    # Plot density heatmap using kdeplot
+    sns.kdeplot(x=x, y=y, cmap="Blues", fill=True, thresh=0.05, alpha=0.7)
+    # Overlay the scatter plot for sampled points
+    sns.scatterplot(x=x, y=y, color="red", s=20, edgecolor="w", alpha=0.6)
+    plt.title(title)
+    plt.xlabel("PCA Dimension 1")
+    plt.ylabel("PCA Dimension 2")
+    plt.grid(True)
+    plt.show()
+
+# Loop through the specified dimensions and generate the corresponding plots
+for dim in dimensions:
+    samples = generate_lhs_samples(dim, n_samples)
+    
+    if dim == 2:
+        # Plot for 2D LHS sampling
+        plot_2d_lhs(samples, title="2D LHS Sampling")
+        
+    elif dim == 3:
+        # Plot for 3D LHS sampling with 3D view
+        plot_3d_lhs(samples, title="3D LHS Sampling")
+        
+    elif dim == 4:
+        # Plot for 4D LHS sampling after PCA reduction with density visualization
+        plot_4d_lhs_with_density(samples, title="4D LHS Sampling (PCA Reduced)")
+```
+
+
+---
+
 ## Wrapping It All Up
 
 LHS is, without a doubt, an impressive technique. It’s one of those methods that shows just how much smarter sampling can be than a simple “grab a few random points and hope for the best” approach. By strategically covering each dimension and ensuring no corner of our data space is left unexplored, LHS brings precision and balance to the chaotic world of complex systems. Whether you’re testing car engines, predicting financial risk, modeling climate change, or designing clinical trials, LHS has a unique knack for extracting the most insight with the least effort. It’s efficiency and elegance wrapped into one neat package.
 
-That said, LHS is not a cure-all. As we explored, it starts to stumble in high dimensions, where the dreaded curse of dimensionality can make even the most elegant sampling methods feel a bit sluggish. And when variables are in flux, like in dynamic systems, LHS's simple structure can’t quite capture the dance of interdependencies over time. In those cases, it’s like trying to catch a shadow—by the time you sample one point, the system has already changed. But here’s the fun part about a method like LHS: it has this air of adaptability. While it might not suit every situation perfectly, it can be hybridized, adjusted, and even reinvented to suit new needs. I think that’s why it’s so appealing to both engineers and data scientists alike. It’s like a trusty tool in the toolbox—maybe not perfect for every job, but reliable, efficient, and, when applied right, a powerful asset.
-
----
+That said, LHS is not a cure-all. As we explored, it starts to stumble in high dimensions, where the dreaded curse of dimensionality can make even the most elegant sampling methods feel a bit sluggish. And when variables are in flux, like in dynamic systems, LHS's simple structure can’t quite capture the dance of interdependencies over time. In those cases, it’s like trying to catch a shadow—by the time you sample one point, the system has already changed. But here’s the fun part about a method like LHS: it has this air of adaptability. While it might not suit every situation perfectly, it can be hybridized, adjusted, and even reinvented to suit new needs. I think that’s why it’s so appealing to both engineers and data scientists alike.
