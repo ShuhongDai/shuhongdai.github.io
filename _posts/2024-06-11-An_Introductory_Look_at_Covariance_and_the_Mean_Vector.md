@@ -20,7 +20,7 @@ In statistics, the Gaussian, or “normal” distribution, is often our first st
 
 At the heart of this distribution are two key players: the mean vector and the covariance matrix. The mean vector is the multivariate equivalent of the single-variable mean, summarizing the central tendencies of all variables in one go. It tells us where the “center” of our data cloud lies, capturing the average or typical values across all dimensions.
 
->Updated on *June 22, 2024*: Additionally, we have published [a new blog post]() that expands on this topic with content covering correlation coefficients and the correlation coefficient matrix.
+>Updated on June 22, 2024: Additionally, [a new blog post](https://shuhongdai.github.io/blog/2024/Correlation_Coefficients/) has been published that expands on this topic with content covering correlation coefficients and the correlation coefficient matrix.
 
 The covariance matrix, on the other hand, is a bit like a backstage operator. It describes how variables interact with each other, revealing not just their individual spreads but also how they move in tandem. Each entry in this matrix provides insights into the relationship between pairs of variables, showing whether they rise and fall together or behave independently. Together, the mean vector and covariance matrix form a powerful duo, shaping the geometry of the distribution and giving us a complete picture of how our data points are scattered and related.
 
