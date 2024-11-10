@@ -185,7 +185,7 @@ This second snippet applies our transformation and then calculates the new mean 
 
 ---
 
-## Section 3: Covariance Matrix – Definition and Computation
+## Covariance Matrix – Definition and Computation
 If the mean vector $$ \mu $$ gives us a sense of location, **then the covariance matrix $$ \Sigma $$ gives us a sense of shape.** It describes how variables are spread and how they relate to each other, capturing both individual variances and pairwise covariances.
 
 ### Definition
