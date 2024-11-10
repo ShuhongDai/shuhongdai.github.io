@@ -262,6 +262,8 @@ One way to address these limitations is by hybridizing LHS with other sampling t
 ## Demo
 Here’s a demonstration of LHS across different dimensions. In 2D, we see LHS distributing sample points evenly across the grid, ensuring each part of the space is represented. In 3D, this principle extends gracefully, capturing a well-balanced spread across all three dimensions. Finally, in 4D, we employ dimensionality reduction to visualize the sampling density, revealing how LHS continues to provide comprehensive coverage even in complex, multi-dimensional settings.
 
+>Updated on June 22, 2024: Additionally, the PCA method used for dimensionality reduction in 4D sampling is detailed with examples in [our latest blog post](https://shuhongdai.github.io/blog/2024/Correlation_Coefficients/#pca-extracting-linear-patterns).
+
 {% assign img_name1 = "2d.png" | split: "/" | last | split: "." | first %}
 {% include figure.liquid
   path="/assets/posts_img/2024-05-03/2d.png"
