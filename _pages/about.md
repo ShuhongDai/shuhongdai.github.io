@@ -9,9 +9,12 @@ profile:
   image: microsoft.png
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>Shuhong Dai (戴书鸿)</p>
-    <p>Master's student at NCEPU</p>
-    <p>daishuhong02@ncepu.edu.cn</p>
+    <p>Master's Student at</p> 
+    <p>Distributed Systems Group.</p>
+    <p>Research Assistant at</p>
+    <p>AI Lab, CRRC Academy.</p>
+    <hr>
+    <p>daishuhong02@gmail.com</p>
 
 news: true # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"

@@ -172,7 +172,7 @@ $$
 R = \begin{bmatrix} 1 & 0.8 & 0.5 \\ 0.8 & 1 & 0.4 \\ 0.5 & 0.4 & 1 \end{bmatrix}
 $$
 
-Each entry $$ R\_{ij} $$ represents the correlation between pairs of variables. For example, the correlation between height and weight is 0.8, indicating a strong positive linear relationship, while the correlation between height and age is 0.5, a moderate positive association.
+Each entry $$ R_{ij} $$ represents the correlation between pairs of variables. For example, the correlation between height and weight is 0.8, indicating a strong positive linear relationship, while the correlation between height and age is 0.5, a moderate positive association.
 
 **Step 1: Eigen-Decomposition of the Correlation Matrix**
 
