@@ -1,8 +1,8 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
-subtitle: No. 2, Beinong Road, Changping District, Beijing, China
+subtitle: 
 
 profile:
   align: left
