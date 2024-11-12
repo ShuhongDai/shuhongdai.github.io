@@ -14,6 +14,43 @@
     {% endif %}
     {% include scripts/jquery.liquid %}
     {% include scripts/mathjax.liquid %}
+
+    {% comment %} Mermaid charts: generates flowcharts, sequence diagrams, etc. {% endcomment %}
+    {% include scripts/mermaid.liquid %}
+
+    {% comment %} Diff2HTML: visualizes code differences {% endcomment %}
+    {% include scripts/diff2html.liquid %}
+
+    {% comment %} Leaflet maps: displays interactive maps {% endcomment %}
+    {% include scripts/leaflet.liquid %}
+
+    {% comment %} Chart.js: creates basic charts (pie, bar, line, etc.) {% endcomment %}
+    {% include scripts/chartjs.liquid %}
+
+    {% comment %} ECharts: advanced interactive data visualization {% endcomment %}
+    {% include scripts/echarts.liquid %}
+
+    {% comment %} Vega charts: JSON-based advanced data charts {% endcomment %}
+    {% include scripts/vega.liquid %}
+
+    {% comment %} TikZJax: renders LaTeX TikZ graphics {% endcomment %}
+    {% include scripts/tikzjax.liquid %}
+
+    {% comment %} Typograms: generates visually styled text {% endcomment %}
+    {% include scripts/typograms.liquid %}
+
+    {% comment %} Academic badges: displays citation counts and social impact {% endcomment %}
+    {% include scripts/badges.liquid %}
+
+    {% comment %} Pseudocode: renders pseudocode formatting {% endcomment %}
+    {% include scripts/pseudocode.liquid %}
+
+    {% comment %}
+      Common scripts collection: loads various interactive page features, especially the code copy button module.
+      If this file is not included, the code copy button will be missing, causing many dynamic elements (e.g., charts, maps, code diff views) to be incorrectly rendered at the end of the article instead of inline.
+    {% endcomment %}
+    {% include scripts/misc.liquid %}
+
     <!-- Distill js -->
     <script src="{{ '/assets/js/distillpub/template.v2.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/distillpub/transforms.v2.js' | relative_url }}"></script>
