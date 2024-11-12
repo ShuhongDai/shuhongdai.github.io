@@ -10,7 +10,7 @@ profile:
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>Master's Student at</p> 
-    <p>Distributed Systems Group.</p>
+    <p>North China Electric Power University.</p> 
     <p>Research Assistant at</p>
     <p>AI Lab, CRRC Academy.</p>
     <hr>
