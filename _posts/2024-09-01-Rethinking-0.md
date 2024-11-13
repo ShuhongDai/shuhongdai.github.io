@@ -1,12 +1,12 @@
 ---
 layout: distill
 title: "Rethinking an Olefin Oligomerization from Three Years Ago – Chapter 0: Preface"
-description: an example of a distill-style blog post and main elements
+description: Perhaps I assumed, rather simplistically, that a mathematical modeling competition would primarily demand mathematical rigor, with little reliance on actual chemistry knowledge (an assumption that proved largely correct). Or perhaps I dismissed it as a straightforward data analysis exercise...
 typograms: true
 tikzjax: true
 thumbnail: /assets/posts_img/2024-09-01/thumbnail.png
-category: 
-tags: distill formatting
+category: A Column on Rethinking a Mathematical Modeling Competition
+tags:  Rambling 
 date: 2024-09-01
 authors:
   - name: Shuhong Dai

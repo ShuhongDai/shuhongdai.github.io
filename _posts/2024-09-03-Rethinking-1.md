@@ -4,9 +4,9 @@ title: "Rethinking an Olefin Oligomerization from Three Years Ago – Chapter 1:
 description: an example of a distill-style blog post and main elements
 typograms: true
 tikzjax: true
-thumbnail: /assets/posts_img/2024-09-01/thumbnail.png
-category: 
-tags: distill formatting
+thumbnail:
+category:  A Column on Rethinking a Mathematical Modeling Competition
+tags: ["Machine Learning", "Modeling", "Algorithms"]
 date: 2024-09-03
 authors:
   - name: Shuhong Dai
@@ -17,7 +17,7 @@ authors:
       name:  Xiamen University
   - name:  Jun-jun Li
     affiliations:
-      name: Shanghai AI Lab & Shanghai Jiao Tong University
+      name: Shanghai Jiao Tong University & Shanghai AI Lab 
 
 
 ---

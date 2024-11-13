@@ -2,9 +2,9 @@
 layout: post
 title: "Sampling Smarter: Unlocking the Power of Latin Hypercube Sampling"
 date: 2024-05-03 00:32:10
-description: A smart approach to capturing diverse data patterns without overwhelming resources.
-tags: formatting code
-categories: sample-posts
+description: Unlike random sampling, which might leave some regions underrepresented while others get chosen repeatedly...
+tags: [ "Statistics","Probability Theory"]  
+categories: ["Bits and Pieces"]
 tabs: true
 featured: true
 thumbnail: /assets/posts_img/2024-05-03/thumbnail.png

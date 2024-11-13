@@ -2,9 +2,9 @@
 layout: post
 title: An Introductory Look at Covariance and the Mean Vector
 date: 2024-06-11 00:32:10
-description: A smart approach to capturing diverse data patterns without overwhelming resources.
-tags: formatting code
-categories: sample-posts
+description: If the mean vector gives us a sense of location, then the covariance matrix gives us a sense of shape...
+tags: [ "Statistics", "Stochastic Processes"]
+categories: ["A Column on Gaussian Processes"]
 tabs: true
 featured: true
 thumbnail: /assets/posts_img/2024-06-11/thumbnail.png

@@ -2,10 +2,9 @@
 layout: post
 title: A Supplementary Discussion on Correlation Coefficients
 date: 2024-06-22 00:32:10
-description: A smart approach to capturing diverse data patterns without overwhelming resources.
-
-tags: formatting code
-categories: sample-posts
+description:   Yet covariance itself is sensitive to the original units of measurement, limiting its direct interpretability across different data scales...
+tags: [ "Statistics", "Stochastic Processes"]
+categories: ["A Column on Gaussian Processes"]
 tabs: true
 tikzjax: true
 thumbnail: /assets/posts_img/2024-06-22/thumbnail.png
