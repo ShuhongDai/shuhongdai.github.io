@@ -4,6 +4,7 @@ title: "Rethinking an Olefin Oligomerization from Three Years Ago – Chapter 0:
 description: an example of a distill-style blog post and main elements
 typograms: true
 tikzjax: true
+thumbnail: /assets/posts_img/2024-09-01/thumbnail.png
 category: 
 tags: distill formatting
 date: 2024-09-01
@@ -18,15 +19,37 @@ authors:
 
 
 
-In September 2021, following an intensive two-month summer training program in mathematical modeling, I embarked on my third year as an electrical engineering undergraduate and prepared for the grueling 72-hour National Mathematical Modeling Contest. Yet, the most memorable part of this experience was not the 20 hours I lost wrestling with a complex telecommunications problem—one I barely understood at the time, labeled as Problem E. Instead, it was the incident at the gym just before the contest began. Following my usual routine, I was midway through a shoulder lateral raise on my fourth set when I received an unexpected call from the dean of the mathematics faculty. He asked, rather bluntly, why I wasn’t preparing for the competition. Shortly after, I found myself hastily reporting to his office, where he proceeded to berate me in no uncertain terms.
+In September 2021, following an intensive two-month summer training program in mathematical modeling, I embarked on my third year as an electrical engineering undergraduate and prepared for the grueling 72-hour National Mathematical Modeling Contest. Yet, the most memorable part of this experience was not the 20 hours I lost wrestling with a complex telecommunications problem—one I barely understood at the time, labeled as Problem  A. Instead, it was the incident at the gym just before the contest began. Following my usual routine, I was midway through a shoulder lateral raise on my fourth set when I received an unexpected call from the dean of the mathematics faculty. He asked, rather bluntly, why I wasn’t preparing for the competition. Shortly after, I found myself hastily reporting to his office, where he proceeded to berate me in no uncertain terms.
 
 ```typograms
-     +------+
-    /      /|
-   +------+ |
-   |      | +
-   |      |/
-   +------+
+.------------------------------------------.
+|.----------------------------------------.|
+||      "https://www.mcm.edu.cn"          ||
+|'----------------------------------------'|
+| ________________________________________ |
+||                                        ||
+||   * Problem A                          ||
+||   Shape Adjustment of a FAST           ||
+||   Active Reflector                     ||
+||                                        ||
+||   * Problem B                          ||
+||   Ethanol Coupling to Prepare          ||
+||   C4 Olefins                           ||
+||                                        ||
+||   * Problem C                          ||
+||   Raw Material Ordering and            ||
+||   Transportation for Manufacturing     ||
+||                                        ||
+||   * Problem D                          ||
+||   Online Optimization of               ||
+||   Continuous Casting and Cutting       ||
+||                                        ||
+||   * Problem E                          ||
+||   Identification of Traditional        ||
+||   Chinese Medicinal Materials          ||
+||                                        ||
+|+----------------------------------------+|
+.------------------------------------------.
 ```
 I often recount this episode as a humorous anecdote to friends, one of those peculiar experiences that, in hindsight, makes for a good story. But to return to the topic at hand: recently, I’ve been coming across the term “computational chemistry” more frequently. My close friend, Carlos Zhou, was an undergraduate in this field before shifting to computer science for his master’s. As a complete outsider to the world of chemistry, I may have some grounding in scientific computing and a passing interest in the trending field of AI4Chemistry, keeping tabs on its applications in drug discovery and protein structure prediction. But when it comes to the intricacies of organic chemistry, I remain wholly ignorant.
 
