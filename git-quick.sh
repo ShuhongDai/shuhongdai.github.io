@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# Run Prettier to automatically format code
-npx prettier . --write
 
 # Stage all changes
 git add .
