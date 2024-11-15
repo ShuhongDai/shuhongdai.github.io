@@ -4,6 +4,7 @@ title: "Rethinking an Olefin Oligomerization from Three Years Ago – Chapter 1:
 description: an example of a distill-style blog post and main elements
 typograms: true
 tikzjax: true
+featured: true
 thumbnail:
 category:  A Column on Rethinking a Mathematical Modeling Competition
 tags: ["Machine Learning", "Modeling", "Algorithms"]

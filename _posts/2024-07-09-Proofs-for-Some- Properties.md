@@ -6,6 +6,7 @@ description:   After the transformation, the random vector $$ \mathbf{Y} = Q^T \
 tags: [ "Statistics", "Stochastic Processes"]
 categories: ["A Column on Gaussian Processes"]
 thumbnail: /assets/posts_img/2024-07-09/thumbnail.png
+featured: true
 tabs: true
 toc:
   sidebar: left
