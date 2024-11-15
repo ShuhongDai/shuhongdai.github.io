@@ -41,7 +41,7 @@ This is a standard result, but the key point is that the normalization factor en
 
 Now that we have the foundation in place, let’s shift gears and consider the generalization of the univariate Gaussian to higher dimensions. In the multivariate case, we are no longer dealing with a single random variable, but rather a vector of random variables, say $$\mathbf{x} = [x_1, x_2, \dots, x_k]^T$$. This vector $$ \mathbf{x} $$ can represent a collection of correlated random variables, and we want to model the joint distribution of these variables.
 
-The multivariate Gaussian distribution generalizes the concept of the univariate normal distribution to $$ k $$-dimensional space. The probability density function (PDF) for a multivariate Gaussian distribution is expressed as:
+The multivariate Gaussian distribution generalizes the concept of the univariate normal distribution to $$ k $$-dimensional space. The PDF for a multivariate Gaussian distribution is expressed as:
 
 $$
 f(\mathbf{x}) = \frac{1}{(2\pi)^{k/2} |\Sigma|^{1/2}} \exp \left( -\frac{1}{2} (\mathbf{x} - \mu)^T \Sigma^{-1} (\mathbf{x} - \mu) \right)
