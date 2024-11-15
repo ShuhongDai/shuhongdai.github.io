@@ -2,7 +2,7 @@
 layout: post
 title: A Sketch of Proofs for Some Properties of Multivariate Gaussian Distribution
 date: 2024-07-09
-description:   After the transformation, the random vector $$ \mathbf{Y} = Q^T \mathbf{X} $$ will have components $$ Y_1, Y_2, \dots, Y_k $$, each with variance $$ \sigma_i^2 $$, and no covariances between them...
+description:   After the transformation, the random vector $ \mathbf{Y} = Q^T \mathbf{X} $ will have components $ Y_1, Y_2, \dots, Y_k $, each with variance $ \sigma_i^2 $, and no covariances between them...
 tags: [ "Statistics", "Stochastic Processes"]
 categories: ["A Column on Gaussian Processes"]
 thumbnail: /assets/posts_img/2024-07-09/thumbnail.png
