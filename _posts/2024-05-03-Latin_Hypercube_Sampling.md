@@ -6,7 +6,6 @@ description: Unlike random sampling, which might leave some regions underreprese
 tags: [ "Statistics","Probability Theory"]  
 categories: ["Bits and Pieces"]
 tabs: true
-featured: true
 thumbnail: /assets/posts_img/2024-05-03/thumbnail.png
 toc:
   sidebar: left
