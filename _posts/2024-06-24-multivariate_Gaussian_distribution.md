@@ -6,6 +6,7 @@ description:   Now that we have the foundation in place, let’s shift gears and
 tags: [ "Statistics", "Stochastic Processes"]
 categories: ["A Column on Gaussian Processes"]
 tabs: true
+featured: true
 toc:
   sidebar: left
 ---
