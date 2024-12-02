@@ -172,6 +172,7 @@ $$
 
 
 <d-code block language="python">
+
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -205,6 +206,7 @@ plt.ylabel('Probability $p_i$', fontsize=14)
 plt.legend(title="Temperature (T)", loc='upper right')
 plt.grid(True)
 plt.show()
+
 </d-code>
 
 
