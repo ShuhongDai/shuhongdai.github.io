@@ -6,7 +6,7 @@ description:   When we diagonalize the covariance matrix, we essentially rotate 
 tags: [ "Statistics", "Stochastic Processes"]
 categories: ["A Column on Gaussian Processes"]
 thumbnail: /assets/posts_img/2024-07-09/thumbnail.png
-featured: true
+featured: false
 tabs: true
 toc:
   sidebar: left
