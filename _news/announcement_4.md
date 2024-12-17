@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-[A paper on data compression](https://ieeexplore.ieee.org/document/10376424) was accepted by _IEEE IoT Journal_.
+[A paper on data compression for transportation](https://ieeexplore.ieee.org/document/10376424) was accepted by _IEEE IoT Journal_.
