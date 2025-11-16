@@ -4,15 +4,17 @@ title: On the Equity Difference Between Suited and Offsuit Starting Hands
 date: 2025-11-17 02:20:00
 description: A mathematical and computational examination of why suited hands hold a small but remarkably consistent equity advantage over their offsuit counterparts in Texas Hold’em.
 tags: ["Poker", "Probability", "Monte Carlo", "Combinatorics", "Game Theory"]
+categories: ["Poker Mathematics"]
 tabs: true
-# thumbnail: /assets/posts_img/2025-11-17/suited-vs-offsuit-thumb.png
+thumbnail: /assets/posts_img/2025-11-17/suited-vs-offsuit-thumb.png
 toc:
   sidebar: left
 ---
 
 ## Introduction
 
-Earlier this year, during a casual session of No-Limit Hold’em, I picked up a hand like Q7. It was offsuit. Without thinking, I caught myself wishing it were suited. The feeling was immediate and familiar. Most players share it: being suited makes a hand *feel* noticeably better.
+Earlier this year, during a casual session of No-Limit Hold’em, I picked up a hand like Q7. It was offsuit.  
+Without thinking, I caught myself wishing it were suited. The feeling was immediate and familiar. Most players share it: being suited makes a hand *feel* noticeably better.
 
 But the more I thought about it, the more the question bothered me:
 
@@ -20,32 +22,32 @@ But the more I thought about it, the more the question bothered me:
 
 The answer is widely repeated in poker circles (“a few percent”), yet rarely justified. I wanted something more precise. So I decided to formalize the question, examine the underlying combinatorics, and finally validate the results with large-scale Monte Carlo simulation.
 
-This article is not about strategy. 
+This article is not about strategy. It’s about understanding a small structural feature of the game that most people take for granted — and what the mathematics behind it really looks like.
 
 ---
 
 ## Formalizing the Problem
 
-Let \(H\) be a starting hand and \(E(H)\) its equity against a uniformly random hand:
+Let $$ H $$ be a starting hand and $$ E(H) $$ its equity against a uniformly random hand:
 
-\[
+$$
 E(H) = \mathbb{P}(H \text{ wins}) 
 \;+\; \tfrac{1}{2}\,\mathbb{P}(H \text{ ties}).
-\]
+$$
 
-For any rank combination \(R\), let:
+For any rank combination $$ R $$, let:
 
-- \(R_s\) = suited version  
-- \(R_o\) = offsuit version  
+- $$ R_s $$ = suited version  
+- $$ R_o $$ = offsuit version  
 
 The object of interest is the **equity difference caused solely by suitedness**:
 
-\[
+$$
 \Delta(R) = E(R_s) - E(R_o).
-\]
+$$
 
 This definition removes strategic context and isolates a purely probabilistic quantity.  
-What follows is an attempt to understand \(\Delta(R)\) from first principles.
+What follows is an attempt to understand $$ \Delta(R) $$ from first principles.
 
 ---
 
@@ -54,12 +56,12 @@ What follows is an attempt to understand \(\Delta(R)\) from first principles.
 Suited hands differ from offsuit hands only in the possibility of making a flush or flush-related draws.  
 Thus we can conceptually decompose equity as:
 
-\[
+$$
 \Delta(R) = 
 \Delta_{\text{flush}}(R) 
 + \Delta_{\text{backdoor}}(R)
 + \Delta_{\text{board}}(R).
-\]
+$$
 
 This is not a strict identity, but a useful analytical decomposition.
 
@@ -67,12 +69,12 @@ This is not a strict identity, but a useful analytical decomposition.
 
 The probability that the board produces **five cards of your suit** is:
 
-\[
+$$
 p_{\text{flush}} 
 = \frac{\binom{11}{5}}{\binom{50}{5}}
 \approx 0.001965
 \quad (0.1965\%).
-\]
+$$
 
 At first glance this seems too small to matter.  
 And indeed, *this alone* cannot explain the ~1–2% equity advantage that suited hands tend to have.
@@ -85,23 +87,23 @@ The full equity impact requires considering draws, not just completed hands.
 
 A backdoor flush occurs when the turn and river complete the suit after the flop supplies exactly two suited cards. The probability is:
 
-\[
+$$
 p_{\text{backdoor}} 
 = 
 \underbrace{
 \frac{\binom{11}{2}}{\binom{50}{3}}
-}_{\text{flop two-tone}}
+}_{\text{flop two-tone}} 
 \times
 \underbrace{
 \frac{9}{47}
-}_{\text{turn hit}}
+}_{\text{turn hit}} 
 \times
 \underbrace{
 \frac{9}{46}
 }_{\text{river hit}}.
-\]
+$$
 
-Though small, the scenarios where backdoor draws contribute to equity are far more numerous than completed flushes, and they collectively account for a significant share of \(\Delta(R)\).
+Though small, the scenarios where backdoor draws contribute to equity are far more numerous than completed flushes, and they collectively account for a significant share of $$ \Delta(R) $$.
 
 ---
 
@@ -116,16 +118,16 @@ Even when no flush or draw exists, suitedness subtly alters a hand’s interacti
 
 Formally, this is captured by the conditional expectation:
 
-\[
+$$
 \Delta_{\text{board}}(R)
 = 
 \mathbb{E}\!\left[
 E(R_s \mid B) - E(R_o \mid B)
 \right],
-\]
+$$
 
-where \(B\) ranges over all possible boards.  
-Although difficult to compute directly, this term explains part of the stability of \(\Delta(R)\) across rank shapes.
+where $$ B $$ ranges over all possible boards.  
+Although difficult to compute directly, this term explains part of the stability of $$ \Delta(R) $$ across rank shapes.
 
 ---
 
@@ -136,16 +138,14 @@ But the combinatorics tell a different story.
 
 Out of all possible 7-card combinations consistent with a given starting hand, only a very small fraction produce flushes:
 
-\[
-\frac{\binom{11}{3}}{\binom{50}{3}},
-\quad
-\frac{\binom{11}{4}}{\binom{50}{4}},
-\quad
+$$
+\frac{\binom{11}{3}}{\binom{50}{3}}, \quad
+\frac{\binom{11}{4}}{\binom{50}{4}}, \quad
 \frac{\binom{11}{5}}{\binom{50}{5}}.
-\]
+$$
 
 These events are rare.  
-The magnitude of \(\Delta(R)\) owes more to **draw equity** than to finished hands, and even then, the effect is bounded by the structure of the card distribution.
+The magnitude of $$ \Delta(R) $$ owes more to **draw equity** than to finished hands, and even then, the effect is bounded by the structure of the card distribution.
 
 This is why suitedness, while real and measurable, is universally modest.
 
@@ -177,11 +177,11 @@ Two observations stood out:
 1. The difference is **consistently small**.  
 2. The variation across hands is narrower than expected.
 
-Across all 169 starting hand types, \(\Delta(R)\) rarely leaves the interval:
+Across all 169 starting hand types, $$ \Delta(R) $$ rarely leaves the interval:
 
-\[
+$$
 0.8\% \lesssim \Delta(R) \lesssim 2.3\%.
-\]
+$$
 
 This matches the combinatorial analysis surprisingly well.
 
@@ -191,7 +191,7 @@ This matches the combinatorial analysis surprisingly well.
 
 Although not a formal theorem, the following informal statement captures the essential structure:
 
-> **For any non-paired starting hand \(R\), the equity difference between suited and offsuit versions is bounded by constants determined almost entirely by flush-related combinatorics and backdoor structure.**
+> **For any non-paired starting hand $$ R $$, the equity difference between suited and offsuit versions is bounded by constants determined almost entirely by flush-related combinatorics and backdoor structure.**
 
 The stability of these bounds across all rank patterns is what makes suitedness mathematically interesting.
 
