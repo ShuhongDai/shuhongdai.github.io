@@ -5,7 +5,7 @@ date: 2025-06-15 21:12:00
 description: A practical record of configuring dm-control with Mujoco on a headless Ubuntu server, covering rendering failures, version mismatches, and the final workable setup.
 tags: [ "Reinforcement Learning", "Mujoco", "dm-control", "Rendering" ]
 tabs: true
-thumbnail: /assets/posts_img/2025-06-15/thumbnail.png
+# thumbnail: /assets/posts_img/2025-06-15/thumbnail.png
 toc:
   sidebar: left
 ---

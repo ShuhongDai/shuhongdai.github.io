@@ -5,7 +5,7 @@ date: 2024-02-02 00:38:10
 description: A practical record of troubleshooting outbound network restrictions on Chinese cloud servers and enabling stable access to foreign academic resources.
 tags: ["Networking", "Proxy", "SSH", "DevOps"]
 tabs: true
-thumbnail: /assets/posts_img/2024-02-02/thumbnail.png
+# thumbnail: /assets/posts_img/2024-02-02/thumbnail.png
 toc:
   sidebar: left
 ---
