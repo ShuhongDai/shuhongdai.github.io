@@ -72,7 +72,7 @@ p_{\text{flush}}
 \quad (0.1965\%).
 $$
 
-At first glance this seems too small to matter. And indeed, *this alone* cannot explain the ~1–2% equity advantage that suited hands tend to have. The full equity impact requires considering draws, not just completed hands.
+At first glance this seems too small to matter. And indeed, *this alone* cannot explain the $$ ~1–2\% $$ equity advantage that suited hands tend to have. The full equity impact requires considering draws, not just completed hands.
 
 ---
 
