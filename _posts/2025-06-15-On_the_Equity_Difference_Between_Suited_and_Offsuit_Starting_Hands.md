@@ -180,5 +180,3 @@ This matches the combinatorial analysis surprisingly well.
 Although not a formal theorem, the following informal statement captures the essential structure:
 
 > **For any non-paired starting hand $$ R $$, the equity difference between suited and offsuit versions is bounded by constants determined almost entirely by flush-related combinatorics and backdoor structure.**
-
-The stability of these bounds across all rank patterns is what makes suitedness mathematically interesting.
