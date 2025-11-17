@@ -20,7 +20,7 @@ This is not an insight I arrived at after trying to extract learning signals fro
 
 ## Visualization Hides Semantics
 
-The rendered frame that SUMO shows us is, in essence, a human-friendly sketch of a world that exists somewhere else. The world SUMO actually simulates consists of continuous lane coordinates, exact positions and velocities, acceleration profiles, signal states, right-of-way relationships, and route intentions that evolve according to a coherent traffic model. This internal world is numerical and symbolic down to its core. Relationships are explicit. Nothing is ambiguous. Every object has a meaning beyond how it looks.
+The rendered frame that SUMO shows us is, in essence, a human-friendly sketch of a world that exists somewhere else. The world SUMO actually simulates consists of continuous lane coordinates, exact positions and velocities, acceleration profiles, signal states, right-of-way relationships, and route intentions that evolve according to a coherent traffic model. This internal world is numerical and symbolic down to its core. 
 
 None of this structure survives the trip into the visual renderer. A car in a SUMO frame is just a colored rectangle, detached from the lane graph it belongs to, stripped of its intentions and priorities, reduced to a geometry that no longer reveals why it will or will not proceed through an intersection. A traffic signal becomes a green or red dot with no connection to the control logic that governs it. Even spatial quantities, such as gaps or queue lengths, degrade into visual approximations that depend on camera perspective rather than on the simulator’s own measurements. It is tempting to think that pixels “contain enough information,” but the truth is that the renderer deliberately hides most of what matters.
 
@@ -44,7 +44,7 @@ Vision makes sense when there is no alternative, such as in real-world driving w
 
 It is important to remember why SUMO has visualization at all. The renderer exists so that humans can watch the simulation unfold. It is a debugging tool, a qualitative sanity check, a way to illustrate traffic scenarios for presentations and reports. The rendering is not a sensory modality of the environment, and it was never meant to be. Its purpose is interpretive, not generative.
 
-If an agent were to rely on SUMO’s visual output, it would be relying on something designed explicitly for human interpretation. And human interpretation thrives on abstractions, simplifications, and aesthetic conventions—all of which run counter to what machine learning expects from observational data.
+If an agent were to rely on SUMO’s visual output, it would be relying on something designed explicitly for human interpretation. And human interpretation thrives on abstractions, simplifications, and aesthetic conventions. All of which run counter to what machine learning expects from observational data.
 
 ---
 
