@@ -1,7 +1,7 @@
 ---
 layout: post
 title: On the Equity Difference Between Suited and Offsuit Starting Hands
-date: 2025-08-03 02:50:00
+date: 2024-09-01 02:50:00
 description: A mathematical and computational examination of why suited hands hold a small but remarkably consistent equity advantage over their offsuit counterparts in Texas Hold’em.
 tags: ["Poker", "Probability", "Monte Carlo", "Combinatorics", "Game Theory"]
 tabs: true

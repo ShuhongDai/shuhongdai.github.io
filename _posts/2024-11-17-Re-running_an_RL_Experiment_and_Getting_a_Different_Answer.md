@@ -2,7 +2,7 @@
 layout: post
 title: "Re-running an RL Experiment and Getting a Different Answer"
 date: 2024-11-17 02:08:00
-description: A  engineering reflection on why two RTX 4090 machines produced diverging RL curves despite identical code, seeds, and configurations—and what this reveals about RL’s numerical sensitivity.
+description: A  engineering reflection on why two RTX 4090 machines produced diverging RL curves despite identical code, seeds, and configurations. And what this reveals about RL’s numerical sensitivity.
 tags: ["Reinforcement Learning", "CUDA", "Numerical Stability", "Reproducibility"]
 tabs: true
 # thumbnail: /assets/posts_img/2025-11-16/replay-gpu-divergence-thumb.png
