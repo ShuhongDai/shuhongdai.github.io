@@ -29,7 +29,7 @@ This kind of “quiet drift” is rare in supervised learning, but painfully com
 
 ---
 
-## Investigation Without Drama
+## Investigation
 
 I didn’t start by suspecting the GPUs. Instead, I reviewed the usual suspects in a calm, methodical way:  
 
@@ -39,7 +39,7 @@ All these checks were quick to perform. Nothing at the framework or data-flow le
 
 ---
 
-## The First Real Clue
+## Clue
 
 The earliest measurable drift appeared not in the policy’s actions, but in the critic’s value estimates. That itself was a clue. The critic is often the most numerically sensitive component in many RL algorithms, and its outputs feed directly into the policy update. If two identical systems begin to disagree, the critic is a natural place to look.
 
