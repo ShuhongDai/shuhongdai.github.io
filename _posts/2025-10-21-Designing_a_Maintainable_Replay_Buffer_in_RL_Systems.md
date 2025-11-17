@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Designing a Maintainable Replay Buffer in Reinforcement Learning Systems
+title: Designing a Maintainable Replay Buffer in RL Systems
 date: 2025-10-21 12:31:00
-description: A structured and engineering-focused reflection on replay buffer design in reinforcement learning, emphasizing clarity, extensibility, and long-term maintainability.
-tags: [ "Reinforcement Learning", "System Design", "Data Structures" ]
+description: A structured and engineering-focused reflection on replay buffer design in RL, emphasizing clarity, extensibility, and long-term maintainability.
+tags: [ "RL", "System Design", "Data Structures" ]
 tabs: true
 # thumbnail: /assets/posts_img/2025-11-15/replay-buffer-thumbnail.png
 toc:
