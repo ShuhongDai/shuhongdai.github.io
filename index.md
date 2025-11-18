@@ -1,4 +1,5 @@
 ---
-layout: default
+layout: about
 title: Home
+permalink: /
 ---
