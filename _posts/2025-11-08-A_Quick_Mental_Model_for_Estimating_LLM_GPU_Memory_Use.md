@@ -44,8 +44,6 @@ My routine is just:
 - add the KV cache,  
 - apply a small safety margin.
 
-That’s enough for a reliable first impression.
-
 ---
 
 ## From Parameters to VRAM
@@ -65,7 +63,7 @@ This is already enough for fast estimation:
 - **13B FP16 model** → $$ 13 \times 2 $$ GB ≈ **26 GB**  
 - **7B 4-bit model** → $$ 7 \times 0.5 $$ GB ≈ **3.5 GB**  
 
-This accounts only for the parameters, not the KV cache. But it gives a solid baseline.
+This accounts only for the parameters, not the KV cache.
 
 ---
 
@@ -101,9 +99,7 @@ $$
 
 Then add room for the KV cache, based on the context length. Finally, leave some headroom to account for framework overhead and fragmentation.
 
-If I want to compress this into a single sentence I can recall mentally, it would be:
-
-> **Take the parameter size, add a few gigabytes for KV cache, add a buffer, and that’s your practical VRAM requirement.**
+If I want to compress this into a single sentence I can recall mentally, it would be: Take the parameter size, add a few gigabytes for KV cache, add a buffer, and that’s your practical VRAM requirement.
 
 
 ---
