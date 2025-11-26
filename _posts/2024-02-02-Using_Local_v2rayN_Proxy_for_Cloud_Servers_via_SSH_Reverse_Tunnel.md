@@ -12,11 +12,17 @@ toc:
 
 ## Introduction
 
-In mainland China, even cloud servers often struggle to access foreign open-source or academic resources. Many people interpret this as “network censorship,” but in my view the situation is more nuanced. It is not necessarily the result of direct, targeted enforcement against technical resources. Instead, it resembles a systemic consequence of long-term authoritarian governance, where private network operators behave with extreme caution in order to avoid any possible regulatory risk.
+<!-- In mainland China, even cloud servers often struggle to access foreign open-source or academic resources. Many people interpret this as “network censorship,” but in my view the situation is more nuanced. It is not necessarily the result of direct, targeted enforcement against technical resources. Instead, it resembles a systemic consequence of long-term authoritarian governance, where private network operators behave with extreme caution in order to avoid any possible regulatory risk.
 
 Under such an environment—opaque rules, inconsistent enforcement, and heavy potential penalties—service providers tend to implement their own overly strict filtering. As a result, traffic to platforms like HuggingFace, GitHub, PyPI, and other purely technical services may be blocked or reset “just in case.” In practice, it becomes a case of *tying themselves up with their own rope*.
 
-For developers and researchers, this means that even a cloud server intended for normal machine learning tasks may have difficulty accessing essential foreign resources. This post documents the issues I encountered and the final working solution.
+For developers and researchers, this means that even a cloud server intended for normal machine learning tasks may have difficulty accessing essential foreign resources. This post documents the issues I encountered and the final working solution. -->
+
+In mainland China, cloud servers frequently experience unstable or inconsistent access to foreign open-source and academic platforms. This is often not due to targeted restrictions on specific technical resources, but rather to conservative traffic filtering and risk-averse network configurations adopted by some service providers.
+
+As a result, essential platforms such as HuggingFace, GitHub, and PyPI may occasionally become unreachable or suffer from intermittent resets, even when the server is intended solely for standard machine learning or research workloads.
+
+This post documents the connectivity issues I encountered on a cloud server and the final stable solution using SSH reverse tunneling.
 
 ---
 
