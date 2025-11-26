@@ -27,4 +27,4 @@ Prior to this, I was interested in embedded real-time operating systems and effi
 
 Currently, I am conducting research under the supervision of [Prof. Long Cheng](https://longcheng.eu/) in the [Distributed Systems Group](http://distsys.org.cn/) he leads. My research focuses on the **optimization of computing and decision-making in intelligent transportation systems**. Additionally, I have also carried out some work in **quantum computing**.
 
-Apart from academics, I am passionate about strategy-based board games, particularly Go and Chinese Chess (Xiangqi), and I also play chess. In the digital gaming space, I have maintained a rank of GrandMaster or higher (**top 0.041%**) in Teamfight Tactics for several seasons. Additionally, in Texas Hold’em poker, I have earned over **300 million** chips in the online game Poker Master.
+Apart from academics, I enjoy strategy-based board games such as Go, Chinese Chess (Xiangqi), and chess. I also play strategy-oriented digital games, and have maintained a GrandMaster-level ranking (top 0.04%) in Teamfight Tactics for several seasons.
