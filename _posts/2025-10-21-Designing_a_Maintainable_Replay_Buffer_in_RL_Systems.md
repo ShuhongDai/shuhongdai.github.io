@@ -154,6 +154,7 @@ Replay buffers sometimes operate close to memory limits, since long-horizon task
 - and, in distributed scenarios, deciding carefully where storage resides.
 
 Performance is certainly relevant, but for most research-level systems, I find that clarity and invariants tend to matter more. Once those are in place, optimizing hotspots becomes easier and safer.
+
 ---
 
 ## The Role of Replay Buffers in Larger RL Architectures
