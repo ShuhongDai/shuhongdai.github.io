@@ -39,7 +39,7 @@ Once I stripped the project to its bones, only the cover page remained before th
 
 This suggested a scope leak originating from the cover code. Something there must have altered typography at a global level.
 
-I returned to `CoverPage.tex` and inspected every line. The core layout was straightforward—some logos, a few horizontal spaces, and the title block. Yet buried inside that block sat the following line:
+I returned to `CoverPage.tex` and inspected every line. The core layout was straightforward including some logos, a few horizontal spaces, and the title block. Yet buried inside that block sat the following line:
 
 ```latex
 \fontsize{20}{50}\selectfont
