@@ -24,7 +24,7 @@ The problem appeared the moment I recompiled after reorganizing the early pages.
 I examined the relevant lines:
 
 ```latex
-\sectionfont{\color{ghent_blue}}
+\sectionfont{\color{blue}}
 ```
 
 The earlier `\sectionfont{\fontsize{16}{15}\selectfont}` had already been removed, so nothing here should have forced a larger font. To verify, I replaced `\section{Motivation}` with a starred version. No change. The environment clearly had deeper roots.
