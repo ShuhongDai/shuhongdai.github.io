@@ -1,12 +1,31 @@
+# Built artifacts
 **/*.map
 **/*.min.css
 **/*.min.js
+lighthouse_results/**
+
+# Assets that shouldn't be formatted
 assets/css/main.scss
 assets/js/search-data.js
 assets/js/distillpub/template.v2.js
 assets/js/search/*.js
 assets/plotly/demo.html
-lighthouse_results/**
+
+# Jekyll generated
+_site/
+
+# Drafts and hidden posts (personal blog structure)
+_posts/_drafts/
+_posts/_hiden_blogs/
+_posts/_old_drafts/
+
+# Specific legacy posts
 _posts/2015-10-20-math.md
+
+# Liquid / Sass heavy files
+_layouts/distill.liquid
 _sass/font-awesome/*.scss
 _sass/tabler-icons/*.scss
+
+# Jekyll config
+_config.yml
