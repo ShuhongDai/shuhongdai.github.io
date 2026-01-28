@@ -29,3 +29,7 @@ _sass/tabler-icons/*.scss
 
 # Jekyll config
 _config.yml
+
+# Ignore markdown formatting
+**/*.md
+
