@@ -33,3 +33,6 @@ _config.yml
 # Ignore markdown formatting
 **/*.md
 
+# Editor / dev environment config (not part of site content)
+.devcontainer/
+.vscode/
