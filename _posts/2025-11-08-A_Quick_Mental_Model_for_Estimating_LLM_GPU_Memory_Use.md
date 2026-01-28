@@ -109,7 +109,7 @@ If I want to compress this into a single sentence I can recall mentally, it woul
 A few architectural details can influence memory usage in practice, even when using the simple estimation model above:
 
 1. **KV cache usage varies across architectures**
-   Hidden sizes and layer counts differ between models. For example, even at similar 7B scales, newer efficient architectures such as **Qwen2.5** and **Mistral** typically use less KV memory per 1k tokens than earlier LLaMA-style models, and smaller models require even less. The “hundreds of MB per 1k tokens” rule still holds, but the exact amount can vary.
+   Hidden sizes and layer counts differ between models. For example, even at similar 7B scales, newer efficient architectures such as **Qwen2.5** and **Mistral** typically use less KV memory per 1k tokens than earlier LLama-style models, and smaller models require even less. The “hundreds of MB per 1k tokens” rule still holds, but the exact amount can vary.
 
 2. **A small amount of extra weight tensors exists**
    Beyond the main linear weights, models include embeddings, LayerNorm parameters, and other small tensors. These usually contribute under 5% of the total size, so the rough estimate remains valid, but the actual VRAM will be slightly higher than the simple parameter × bytes calculation.
