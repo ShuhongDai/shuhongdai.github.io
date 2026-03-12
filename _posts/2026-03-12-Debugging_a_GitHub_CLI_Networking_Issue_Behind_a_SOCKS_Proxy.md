@@ -2,7 +2,7 @@
 layout: post
 title: Debugging a GitHub CLI Networking Issue Behind a SOCKS Proxy
 date: 2026-03-12 12:09:24
-description:  A GitHub CLI networking issue caused by a SOCKS proxy misconfiguration on Windows, and how to diagnose it using netstat.
+description: A GitHub CLI networking issue caused by a SOCKS proxy misconfiguration on Windows, and how to diagnose it using netstat.
 tags: ["github-cli", "proxy", "Networking"]
 tabs: true
 # thumbnail: /assets/posts_img/2025-11-17/llm-memory-thumb.png
