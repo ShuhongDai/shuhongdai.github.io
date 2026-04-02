@@ -2,7 +2,7 @@
 layout: page
 permalink: /videos/
 title: videos
-description: A lightweight gallery for recorded demos, talks, and visual experiments.
+description:
 nav: true
 nav_order: 3
 ---
@@ -23,7 +23,7 @@ nav_order: 3
 
           <h4 class="card-title">{{ video.title }}</h4>
 
-          <p class="card-text">{{ video.description }}</p>
+          <div class="card-text">{{ video.description | markdownify }}</div>
 
           <p class="post-meta mb-2">
             {% if video.category %}
