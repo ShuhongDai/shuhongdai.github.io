@@ -1,0 +1,39 @@
+- title: Site Walkthrough
+  date: 2026-04-02
+  category: Demo
+  description: A first placeholder entry for the new Videos page. Replace this with one of your own recorded demos.
+  source: assets/video/tutorial_al_folio.mp4
+  source_type: local
+  poster:
+  external_url:
+  platform:
+
+- title: Visual Sample Clip
+  date: 2026-04-02
+  category: Showcase
+  description: A second placeholder entry using the sample video already present in the repository.
+  source: assets/video/pexels-engin-akyurt-6069112-960x540-30fps.mp4
+  source_type: local
+  poster:
+  external_url:
+  platform:
+
+- title: Vehicle Platooning and Road Cooperation via MARL in Carla (in Chinese)
+  date: 2024-10-03
+  description: >
+    This video showcases my work during my internship at CRRC AI Lab, where I utilized
+    multi-agent reinforcement learning to collaboratively control traffic signals and CAVs
+    within the traffic system. Notably, I innovatively applied DRL for decision-making in
+    CAV platooning, achieving state-of-the-art results.
+
+    I conducted simulations of the proposed system in Carla and compared its performance
+    with traditional traffic signal control strategies. The video includes Chinese subtitles
+    and voiceovers for better understanding.
+
+    This work has been published in the IEEE Internet of Things Journal:
+    https://ieeexplore.ieee.org/document/10632106
+  source: assets/video/vehicle-platooning-road-cooperation-marl-carla-web.mp4
+  source_type: local
+  poster:
+  external_url: https://www.youtube.com/watch?v=A787LfoV7nM
+  platform: YouTube
