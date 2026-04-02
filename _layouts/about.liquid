@@ -56,6 +56,14 @@ layout: default
       {% include latest_posts.liquid %}
     {% endif %}
 
+    <!-- Selected videos -->
+    {% if page.selected_videos %}
+      <h2>
+        <a href="{{ '/videos/' | relative_url }}" style="color: inherit">selected videos</a>
+      </h2>
+      {% include selected_videos.liquid %}
+    {% endif %}
+
     <!-- Selected papers -->
     {% if page.selected_papers %}
       <h2>

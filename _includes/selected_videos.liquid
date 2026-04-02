@@ -1,0 +1,41 @@
+<div class="news">
+  {% assign selected_videos = site.data.videos | where: "selected", true %}
+  {% assign selected_videos_size = selected_videos | size %}
+
+  {% if selected_videos_size > 0 %}
+    <div class="table-responsive">
+      <table class="table table-sm table-borderless">
+        {% for item in selected_videos %}
+          {% assign video_anchor = item.title | slugify %}
+          <tr>
+            <th scope="row" style="width: 20%">{{ item.date | date: '%b %d, %Y' }}</th>
+            <td>
+              <a
+                class="news-title selected-video-link"
+                href="{{ '/videos/' | relative_url }}"
+                data-video-anchor="{{ video_anchor }}"
+              >
+                {{ item.title }}
+              </a>
+            </td>
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
+  {% else %}
+    <p>No selected videos yet...</p>
+  {% endif %}
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.selected-video-link').forEach((link) => {
+      link.addEventListener('click', () => {
+        const anchor = link.dataset.videoAnchor;
+        if (anchor) {
+          sessionStorage.setItem('selectedVideoAnchor', anchor);
+        }
+      });
+    });
+  });
+</script>
