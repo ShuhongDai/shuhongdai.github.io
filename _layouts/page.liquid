@@ -15,6 +15,11 @@ layout: default
   </header>
 
   <article>
+    {% if page.collection == 'projects' and page.img %}
+      <div class="mb-4">
+        {% include figure.liquid path=page.img no_responsive=page.img_no_responsive class="img-fluid rounded z-depth-1" loading="eager" alt=page.title %}
+      </div>
+    {% endif %}
     {{ content }}
   </article>
 

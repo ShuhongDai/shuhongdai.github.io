@@ -6,6 +6,7 @@
           include figure.liquid
           loading="eager"
           path=project.img
+          no_responsive=project.img_no_responsive
           sizes = "250px"
           alt="project thumbnail"
           class="card-img-top"
@@ -13,6 +14,11 @@
       {% endif %}
       <div class="card-body">
         <h2 class="card-title">{{ project.title }}</h2>
+        {% if project.status %}
+          <div class="project-status-row">
+            <span class="project-status">{{ project.status }}</span>
+          </div>
+        {% endif %}
         <p class="card-text">{{ project.description }}</p>
         <div class="row ml-1 mr-1 p-0">
           {% if project.github %}

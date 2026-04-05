@@ -634,6 +634,25 @@ footer.sticky-bottom {
     }
   }
 
+  .project-status-row {
+    margin-bottom: 0.55rem;
+  }
+
+  .project-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.16rem 0.55rem;
+    border-radius: 999px;
+    background-color: rgba(13, 110, 253, 0.1);
+    color: var(--global-theme-color);
+    border: 1px solid rgba(13, 110, 253, 0.16);
+    font-size: 0.72rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+
   .col {
     padding-bottom: 1rem;
   }

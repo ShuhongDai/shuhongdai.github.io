@@ -2,10 +2,10 @@
 layout: page
 title: projects
 permalink: /projects/
-description: A growing collection of your cool projects.
-nav: false
-nav_order: 3
-display_categories: [work, fun]
+description:
+nav: true
+nav_order: 4
+display_categories: [open-source, research-projects]
 horizontal: false
 ---
 
@@ -15,25 +15,35 @@ horizontal: false
   <!-- Display categorized projects -->
   {% for category in page.display_categories %}
   <a id="{{ category }}" href=".#{{ category }}">
-    <h2 class="category">{{ category }}</h2>
+    <h2 class="category">{{ category | replace: '-', ' ' }}</h2>
   </a>
   {% assign categorized_projects = site.projects | where: "category", category %}
   {% assign sorted_projects = categorized_projects | sort: "importance" %}
   <!-- Generate cards for each project -->
-  {% if page.horizontal %}
-  <div class="container">
-    <div class="row row-cols-1 row-cols-md-2">
-    {% for project in sorted_projects %}
-      {% include projects_horizontal.liquid %}
-    {% endfor %}
+  {% if sorted_projects.size > 0 %}
+    {% if page.horizontal %}
+    <div class="container">
+      <div class="row row-cols-1 row-cols-md-2">
+      {% for project in sorted_projects %}
+        {% include projects_horizontal.liquid %}
+      {% endfor %}
+      </div>
     </div>
-  </div>
+    {% else %}
+    <div class="row row-cols-1 row-cols-md-3">
+      {% for project in sorted_projects %}
+        {% include projects.liquid %}
+      {% endfor %}
+    </div>
+    {% endif %}
   {% else %}
-  <div class="row row-cols-1 row-cols-md-3">
-    {% for project in sorted_projects %}
-      {% include projects.liquid %}
-    {% endfor %}
-  </div>
+    {% if category == 'open-source' %}
+    <p>Open-source projects will appear here.</p>
+    {% elsif category == 'research-projects' %}
+    <p>Research project summaries will appear here.</p>
+    {% else %}
+    <p>Projects will appear here.</p>
+    {% endif %}
   {% endif %}
   {% endfor %}
 
