@@ -25,18 +25,8 @@
       };
 
       try {
-        if (navigator.sendBeacon) {
-          const blob = new Blob([payload], { type: 'application/json' });
-          if (navigator.sendBeacon(endpoint, blob)) {
-            markSent();
-            return;
-          }
-        }
-
         fetch(endpoint, {
           method: 'POST',
-          mode: 'no-cors',
-          keepalive: true,
           headers: {
             'Content-Type': 'application/json',
           },
