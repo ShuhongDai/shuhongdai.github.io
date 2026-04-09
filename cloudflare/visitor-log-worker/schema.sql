@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS visits (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  ts TEXT NOT NULL,
+  city TEXT,
+  country TEXT,
+  path TEXT,
+  site TEXT
+);

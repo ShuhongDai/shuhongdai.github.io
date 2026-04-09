@@ -304,8 +304,8 @@ display_categories: #["Bits and Pieces", "A Column on Rethinking a Mathematical 
 # -----------------------------------------------------------------------------
 
 scholar:
-  last_name: [Shuhong]
-  first_name: [Dai]
+  last_name: [Dai]
+  first_name: [Shuhong]
 
   style: apa
   locale: en
@@ -419,6 +419,11 @@ lazy_loading_images: true # enables lazy loading of images (recommended)
 enable_google_analytics: false # enables google analytics
 enable_cronitor_analytics: false # enables cronitor RUM analytics
 enable_pirsch_analytics: false # enables Pirsch analytics (https://pirsch.io/)
+
+visitor_logging:
+  enabled: true
+  endpoint: https://visitor-log.daishuhong02.workers.dev/collect
+  site_name: shuhongdai-homepage
 enable_google_verification: false # enables google site verification
 enable_bing_verification: false # enables bing site verification
 enable_masonry: true # enables automatic project cards arrangement

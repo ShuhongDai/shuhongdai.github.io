@@ -738,6 +738,16 @@ footer.sticky-bottom {
 
       .title {
         font-weight: bolder;
+
+        a {
+          color: var(--global-theme-color);
+          text-decoration: none;
+
+          &:hover {
+            color: var(--global-theme-color);
+            text-decoration: underline;
+          }
+        }
       }
 
       .author {
@@ -750,9 +760,9 @@ footer.sticky-bottom {
           }
         }
 
-        > em {
+        > .author-self {
           border-bottom: 1px solid;
-          font-style: normal;
+          font-weight: inherit;
         }
 
         > span.more-authors {

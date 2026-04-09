@@ -1,0 +1,11 @@
+name = "shuhongdai-visitor-log"
+main = "worker.js"
+compatibility_date = "2026-04-09"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "visitor-log"
+database_id = "YOUR_D1_DATABASE_ID"
+
+[vars]
+ADMIN_TOKEN = "replace-with-a-long-random-token"

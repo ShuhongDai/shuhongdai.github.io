@@ -1,0 +1,50 @@
+{% if site.visitor_logging.enabled and site.visitor_logging.endpoint %}
+  <script>
+    (() => {
+      const endpoint = {{ site.visitor_logging.endpoint | jsonify }};
+      if (!endpoint) return;
+
+      const path = window.location.pathname || '/';
+      const siteName = {{ site.visitor_logging.site_name | default: site.title | jsonify }};
+      const sessionKey = `visit-log:${siteName}:${path}`;
+
+      if (window.sessionStorage && sessionStorage.getItem(sessionKey)) {
+        return;
+      }
+
+      const payload = JSON.stringify({
+        site: siteName,
+        path,
+        ts: new Date().toISOString(),
+      });
+
+      const markSent = () => {
+        if (window.sessionStorage) {
+          sessionStorage.setItem(sessionKey, '1');
+        }
+      };
+
+      try {
+        if (navigator.sendBeacon) {
+          const blob = new Blob([payload], { type: 'application/json' });
+          if (navigator.sendBeacon(endpoint, blob)) {
+            markSent();
+            return;
+          }
+        }
+
+        fetch(endpoint, {
+          method: 'POST',
+          mode: 'no-cors',
+          keepalive: true,
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: payload,
+        }).finally(markSent);
+      } catch (error) {
+        // Swallow analytics errors so the page never breaks.
+      }
+    })();
+  </script>
+{% endif %}
