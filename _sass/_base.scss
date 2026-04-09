@@ -546,6 +546,17 @@ footer.sticky-bottom {
   }
 }
 
+.about-title {
+  font-family: 'Roboto Slab', Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+
+  .font-weight-bold {
+    font-weight: 700;
+  }
+}
+
 .post-list {
   margin: 0;
   margin-bottom: 40px;
