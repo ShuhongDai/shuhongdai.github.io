@@ -287,6 +287,12 @@ ul.task-list input[type="checkbox"] {
     color: var(--global-text-color);
   }
 
+  .navbar-brand.site-name {
+    font-family: 'Roboto Slab', Georgia, serif;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+
   .navbar-nav .nav-item .nav-link {
     color: var(--global-text-color);
 
