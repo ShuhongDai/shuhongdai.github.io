@@ -5,7 +5,7 @@ permalink: /projects/
 description:
 nav: true
 nav_order: 4
-display_categories: [open-source, research-projects]
+display_categories: [general-projects, research-projects]
 horizontal: false
 ---
 
@@ -37,8 +37,8 @@ horizontal: false
     </div>
     {% endif %}
   {% else %}
-    {% if category == 'open-source' %}
-    <p>Open-source projects will appear here.</p>
+    {% if category == 'general-projects' %}
+    <p>General projects will appear here.</p>
     {% elsif category == 'research-projects' %}
     <p>Research project summaries will appear here.</p>
     {% else %}

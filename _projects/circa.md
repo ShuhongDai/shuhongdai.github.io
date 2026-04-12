@@ -5,7 +5,7 @@ description: A research prototype for strict placement-level OOD co-location sch
 img: assets/img/project_preview/circa.png
 img_no_responsive: true
 importance: 2
-category: open-source
+category: research-projects
 status: Prototype
 github: https://github.com/ShuhongDai/CIRCA
 ---

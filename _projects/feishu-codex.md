@@ -5,7 +5,7 @@ description: A Feishu / Lark bot that connects chat messages to your local Codex
 img: assets/img/project_preview/feishu-codex.png
 img_no_responsive: true
 importance: 1
-category: open-source
+category: general-projects
 status: Maintained
 github: https://github.com/ShuhongDai/Feishu-Codex
 ---
