@@ -6,7 +6,7 @@ subtitle:
 
 profile:
   align: left
-  image: microsoft.png
+  image: cover-photo.png
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>Ph.D. Researcher at</p>
