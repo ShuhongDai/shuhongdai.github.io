@@ -9,10 +9,9 @@ profile:
   image: microsoft.png
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>Master's Student at</p> 
-    <p>North China Electric Power University.</p> 
-    <p>Research Assistant at</p>
-    <p>AI Lab, CRRC Academy.</p>
+    <p>Ph.D. Researcher at</p>
+    <p>Edge AI Group,</p>
+    <p>University of Innsbruck.</p>
     <hr>
     <p>daishuhong02@gmail.com</p>
 
