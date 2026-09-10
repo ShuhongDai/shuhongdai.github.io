@@ -3,7 +3,8 @@ layout: page
 title: projects
 permalink: /projects/
 description:
-nav: true
+nav: false
+published: false
 nav_order: 4
 display_categories: [general-projects, research-projects]
 horizontal: false
