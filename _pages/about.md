@@ -9,7 +9,7 @@ profile:
   image: cover-photo.png
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>Ph.D. Researcher at</p>
+    <p>Ph.D. Student at</p>
     <p>Edge AI Group,</p>
     <p>University of Innsbruck.</p>
     <hr>
@@ -22,7 +22,7 @@ social: true # includes social icons at the bottom of the page
 ---
 
 
-I am currently a Ph.D. researcher in the [Edge AI Group](https://edgeai-informatik.uibk.ac.at/) at the University of Innsbruck, working under the supervision of Prof. Radu Prodan. My research interests mainly focus on Distributed AI and Agentic AI.
+I am currently a Ph.D. student in the [Edge AI Group](https://edgeai-informatik.uibk.ac.at/) at the University of Innsbruck, working under the supervision of Prof. Radu Prodan. My research interests mainly focus on Distributed AI and Agentic AI.
 
 I received my Master's degree in Computer Science in 2026. During my master's studies, I was supervised by [Prof. Long Cheng](https://longcheng.eu/) and conducted research in the [EPI Lab](https://energy-pi.com/en) led by him. My research mainly focused on multi-agent reinforcement learning for intelligent transportation systems.
 
