@@ -13,7 +13,7 @@ profile:
     <p>Edge AI Group,</p>
     <p>University of Innsbruck.</p>
     <hr>
-    <p>daishuhong02@gmail.com</p>
+    <p>shuhong.dai@uibk.ac.at</p>
 
 news: true # includes a list of news items
 selected_videos: true
