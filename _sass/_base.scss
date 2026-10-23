@@ -204,6 +204,18 @@ ul.task-list input[type="checkbox"] {
       display: inline-block;
       margin: 0;
     }
+
+    .profile-email a {
+      display: inline-flex;
+      gap: 0.4rem;
+      align-items: center;
+      color: var(--global-text-color);
+      font-size: 0.85rem;
+
+      &:hover {
+        color: var(--global-theme-color);
+      }
+    }
   }
 }
 
@@ -217,7 +229,7 @@ ul.task-list input[type="checkbox"] {
 
 @media (min-width: 576px) {
   .profile {
-    width: 30%;
+    width: var(--profile-width, 30%);
 
     .address {
       p {
