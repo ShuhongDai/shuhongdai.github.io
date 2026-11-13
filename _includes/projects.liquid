@@ -6,7 +6,7 @@
           include figure.liquid
           loading="eager"
           path=project.img
-          no_responsive=project.img_no_responsive
+          avoid_scaling=project.img_no_responsive
           sizes = "250px"
           alt="project thumbnail"
           class="card-img-top"
@@ -14,6 +14,7 @@
       {% endif %}
       <div class="card-body">
         <h2 class="card-title">{{ project.title }}</h2>
+        {% comment %} Site override: optional `status` pill from the project front matter. {% endcomment %}
         {% if project.status %}
           <div class="project-status-row">
             <span class="project-status">{{ project.status }}</span>

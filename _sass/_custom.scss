@@ -1,0 +1,163 @@
+/*******************************************************************************
+ * Site-specific styles for shuhongdai.github.io
+ *
+ * Everything the theme (al_folio_core) does not ship lives here. This partial is
+ * loaded last from assets/css/main.scss, so its rules win over the theme's.
+ ******************************************************************************/
+
+$brand-red: #a82740;
+$display-font: "Roboto Slab", Georgia, serif;
+
+// Theme colour ---------------------------------------------------------------
+// Light mode only: dark mode keeps the theme's own colour because
+// `html[data-theme="dark"]` is more specific than `:root`.
+
+:root {
+  --global-theme-color: #{$brand-red};
+  --global-hover-color: #{$brand-red};
+}
+
+// Site name and about-page title ----------------------------------------------
+
+.navbar.navbar-light .navbar-brand.title {
+  font-family: $display-font;
+  font-weight: lighter;
+  letter-spacing: -0.02em;
+
+  // The theme bolds the first name; show the whole name in one weight.
+  .font-weight-bold {
+    font-weight: inherit;
+  }
+}
+
+.about-title {
+  font-family: $display-font;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+// About-page profile ----------------------------------------------------------
+// The photo width is set per page with `profile.width` in the front matter,
+// which _layouts/about.liquid exposes as --profile-width.
+
+.profile .more-info {
+  font-family: monospace !important;
+
+  .profile-email a {
+    display: inline-flex;
+    gap: 0.4rem;
+    align-items: center;
+    color: var(--global-text-color);
+    font-size: 0.85rem;
+
+    &:hover {
+      color: var(--global-theme-color);
+    }
+  }
+}
+
+.profile-content {
+  display: flow-root;
+}
+
+@media (min-width: 576px) {
+  .profile {
+    width: var(--profile-width, 30%);
+  }
+}
+
+// Publications ------------------------------------------------------------------
+// Titles are links (see _layouts/bib.liquid) and the site owner's name is
+// underlined rather than italicised.
+
+.publications ol.bibliography li {
+  .title a {
+    color: var(--global-theme-color);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--global-theme-color);
+      text-decoration: underline;
+    }
+  }
+
+  .author > .author-self {
+    border-bottom: 1px solid;
+    font-weight: inherit;
+  }
+}
+
+// Projects ----------------------------------------------------------------------
+
+.projects {
+  .project-status-row {
+    margin-bottom: 0.55rem;
+  }
+
+  .project-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.16rem 0.55rem;
+    border-radius: 999px;
+    background-color: rgba(13, 110, 253, 0.1);
+    color: var(--global-theme-color);
+    border: 1px solid rgba(13, 110, 253, 0.16);
+    font-size: 0.72rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+}
+
+// Videos page -------------------------------------------------------------------
+// Two cards per row on wide screens; the theme's prebuilt CSS has no .col-lg-6.
+
+@media (min-width: 992px) {
+  .col-lg-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+.videos-card {
+  font-weight: 400;
+
+  .card-title {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    padding: 0.5rem 1.6rem;
+    border: 0;
+    color: var(--global-text-color);
+    text-transform: uppercase;
+  }
+}
+
+// Code --------------------------------------------------------------------------
+// Keep the monospace stack and sizing the site had before the move to al-folio v1.
+
+pre,
+code,
+kbd,
+samp {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+pre {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 87.5%;
+
+  code {
+    font-size: inherit;
+  }
+}
+
+:not(pre) > code {
+  padding: 3px;
+  font-size: 87.5%;
+  font-weight: inherit;
+}

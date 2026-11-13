@@ -10,6 +10,8 @@ status: Completed
 github: https://github.com/ShuhongDai/UNaR
 ---
 
+{% include project_hero.liquid %}
+
 UNaR is an **uncertainty-regularized offline reinforcement learning** project built around a minimal extension of **TD3+BC**. The main goal is to replace fixed global behavior regularization with a **state-dependent uncertainty-aware control signal**, so the policy can stay conservative in risky regions while still improving where the critic is confident.
 
 ## Overview

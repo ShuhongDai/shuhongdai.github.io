@@ -10,6 +10,8 @@ status: Maintained
 github: https://github.com/ShuhongDai/Feishu-Codex
 ---
 
+{% include project_hero.liquid %}
+
 Feishu-Codex is an open-source bridge between **Feishu / Lark** and your local **Codex CLI**.
 It lets you talk to a Codex agent from chat, runs `codex exec --json` on your own machine, and sends tool progress together with the final response back to Feishu cards.
 

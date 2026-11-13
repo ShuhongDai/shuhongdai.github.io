@@ -10,6 +10,8 @@ status: Prototype
 github: https://github.com/ShuhongDai/CIRCA
 ---
 
+{% include project_hero.liquid %}
+
 CIRCA is a research prototype for **strict placement-level OOD co-location scheduling** in multi-tenant GPU systems.
 It studies how to score candidate placements under genuinely unseen deployment contexts, and how to evaluate whether a scheduler can still rank actions correctly when the placement structure was never observed during training.
 
