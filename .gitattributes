@@ -1,0 +1,16 @@
+# Store everything with LF line endings, whatever OS the commit comes from.
+# (Committing from Windows without this once rewrote ~100 files as CRLF.)
+* text=auto eol=lf
+*.sh text eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.mp4 binary
+*.mp3 binary
+*.woff binary
+*.woff2 binary
