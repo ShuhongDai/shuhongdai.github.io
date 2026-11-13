@@ -1,0 +1,10 @@
+{% comment %}
+  Hero image at the top of a project page. Call it as the first line of a project's
+  body: {% include project_hero.liquid %}. Uses `img` (and the optional
+  `img_no_responsive: true`) from the project's front matter.
+{% endcomment %}
+{% if page.img %}
+  <div class="mb-4">
+    {% include figure.liquid path=page.img avoid_scaling=page.img_no_responsive class="img-fluid rounded z-depth-1" loading="eager" alt=page.title %}
+  </div>
+{% endif %}
