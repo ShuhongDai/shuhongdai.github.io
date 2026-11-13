@@ -3,9 +3,7 @@ name: Upgrade contract checks
 on:
   push:
     branches:
-      - master
       - main
-      - v1.0-dev
     paths:
       - "_config.yml"
       - "_data/**"
@@ -15,13 +13,14 @@ on:
       - "assets/**"
       - "Gemfile"
       - "Gemfile.lock"
-      - "test/integration_upgrade_cli.sh"
+      - "_includes/**"
+      - "_layouts/**"
+      - "_sass/**"
+      - ".al-folio-overrides.yml"
       - ".github/workflows/upgrade-check.yml"
   pull_request:
     branches:
-      - master
       - main
-      - v1.0-dev
     paths:
       - "_config.yml"
       - "_data/**"
@@ -31,7 +30,10 @@ on:
       - "assets/**"
       - "Gemfile"
       - "Gemfile.lock"
-      - "test/integration_upgrade_cli.sh"
+      - "_includes/**"
+      - "_layouts/**"
+      - "_sass/**"
+      - ".al-folio-overrides.yml"
       - ".github/workflows/upgrade-check.yml"
 
 jobs:
@@ -44,11 +46,14 @@ jobs:
       - name: Setup Ruby 💎
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.3.5"
+          ruby-version: "3.3"
           bundler-cache: true
 
       - name: Run upgrade audit 🧪
         run: bundle exec al-folio upgrade audit
+
+      - name: List local theme overrides 🧩
+        run: bundle exec al-folio upgrade overrides audit
 
       - name: Upload upgrade report 📄
         if: always()
